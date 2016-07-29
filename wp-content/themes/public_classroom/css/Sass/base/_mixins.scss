@@ -1,0 +1,261 @@
+
+@mixin right-arrow($x, $y, $color_1) {
+	border-top: $x solid transparent;
+	border-bottom: $x solid transparent;
+	border-left: $y solid $color_1;
+	font-size: 0;
+	height: 0;
+	width: 0;
+}
+
+
+
+
+@mixin big-button($color_1, $color_2) {
+	color: $color_1;
+	border: 2px solid $color_1;
+	transition: $transition;
+	&:link {
+		background-color: transparent;
+		border-color: $color_1;
+		color: $color_1;
+	}
+	&:hover {
+		background-color: $color_1;
+		border-color: $color_1;
+		color: $color_2;
+		fill: $color_2;
+		text-decoration: none;
+	}
+	&:hover svg {
+		fill: $color_2;
+		left: 5px;
+	}
+	&:active {
+		background-color: $color_1;
+		border-color: $color_1;
+		color: $color_2;
+		box-shadow: none;
+	}
+	&:active svg {
+		fill: $color_2;
+		left: 5px;
+	}
+	&:focus, &:active:focus {
+		background-color: $color_1;
+		border-color: $color_1;
+		color: $color_2;
+		outline: 5px auto $color_1;
+	}
+	&:focus, &:active:focus svg {
+		fill: $color_2;
+		left: 5px;
+	}
+	&:visited {
+		background-color: $color_1;
+		border-color: $color_1;
+	}
+}
+
+
+@mixin big-button-2($color_1, $color_2) {
+	color: $color_2;
+	border: 2px solid $color_1;
+	background-color: $color_1;
+	transition: $transition;
+	&:link {
+		background-color: $color_1;
+		border-color: $color_1;
+		color: $color_2;
+	}
+	&:hover {
+		background-color: $color_2;
+		border-color: $color_1;
+		color: $color_1;
+		//fill: $color_1;
+		text-decoration: none;
+	}
+	&:hover svg {
+		fill: $color_2;
+		left: 5px;
+	}
+	&:active {
+		background-color: $color_2;
+		border-color: $color_1;
+		color: $color_1;
+		box-shadow: none;
+	}
+	&:active svg {
+		fill: $color_2;
+		left: 5px;
+	}
+	&:focus, &:active:focus {
+		background-color: $color_2;
+		border-color: $color_1;
+		color: $color_1;
+		outline: 5px auto $color_2;
+	}
+	&:focus, &:active:focus svg {
+		fill: $color_2;
+		left: 5px;
+	}
+/*
+	&:visited {
+		background-color: $color_1;
+		border-color: $color_1;
+		color: $color_2;
+	}
+*/
+}
+
+
+
+
+
+@mixin alt-button($color_1, $color_2, $color_3) {
+	//color: $color_1;
+	border: 2px solid $color_1;
+	transition: $transition;
+	&:link {
+		background-color: transparent;
+		border-color: $color_1;
+		color: $color_1;
+	}
+	&:hover {
+		background-color: $color_2;
+		border-color: $color_1;
+		color: $color_3;
+		fill: $color_3;
+		text-decoration: none;
+	}
+	&:hover svg {
+		fill: $color_3;
+		left: 5px;
+	}
+	&:active {
+		background-color: $color_2;
+		border-color: $color_2;
+		color: $color_3;
+		box-shadow: none;
+	}
+	&:active svg {
+		fill: $color_3;
+		left: 5px;
+	}
+	&:focus, &:active:focus {
+		background-color: $color_2;
+		border-color: $color_2;
+		color: $color_3;
+		outline: 5px auto $color_2;
+	}
+	&:focus, &:active:focus svg {
+		fill: $color_3;
+		left: 5px;
+	}
+	// &:visited {
+	// 	background-color: $color_1;
+	// 	border-color: $color_1;
+	// }
+}
+
+
+@mixin jumbotron($height, $url) { //$url is string put quotes around
+	background-color: $pale-grey;
+	border-radius: 0px !important;
+	height: $height;
+	background-image: url($url);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	margin-bottom: 0;
+	display: flex;
+	flex-direction: column;
+    justify-content: flex-end;
+	//align-items: center;
+	padding-left: 0px !important;
+}
+
+@mixin screen-xxs {
+  @media (#{$screen-xxs}) {
+    @content;
+  }
+}
+
+@mixin screen-xs {
+  @media (#{$screen-xs}) {
+    @content;
+  }
+}
+
+@mixin screen-sm {
+  @media (#{$screen-sm}) {
+    @content;
+  }
+}
+
+@mixin screen-md {
+  @media (#{$screen-md}) {
+    @content;
+  }
+}
+
+@mixin screen-lg {
+  @media (#{$screen-lg}) {
+    @content;
+  }
+}
+
+@mixin screen-xl {
+  @media (#{$screen-xl}) {
+    @content;
+  }
+}
+
+@mixin screen-ltmd  {
+  @media (#{$screen-ltmd}) {
+    @content;
+  }
+}
+
+@mixin screen-ltlg  {
+  @media (#{$screen-ltlg}) {
+    @content;
+  }
+}
+
+@mixin screen-ltxl  {
+  @media (#{$screen-ltxl}) {
+    @content;
+  }
+}
+
+@mixin screen-gtxs  {
+  @media (#{$screen-gtxs}) {
+    @content;
+  }
+}
+
+@mixin screen-gtsm  {
+  @media (#{$screen-gtsm}) {
+    @content;
+  }
+}
+
+@mixin screen-gtmd  {
+  @media (#{$screen-gtmd}) {
+    @content;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

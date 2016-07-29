@@ -1,30 +1,37 @@
-			<!-- footer -->
-			<footer class="footer" role="contentinfo">
-
-				<!-- copyright -->
-				<p class="copyright">
-					&copy; <?php echo date('Y'); ?> Copyright <?php bloginfo('name'); ?>. <?php _e('Powered by', 'html5blank'); ?>
-					<a href="//wordpress.org" title="WordPress">WordPress</a> &amp; <a href="//html5blank.com" title="HTML5 Blank">HTML5 Blank</a>.
-				</p>
-				<!-- /copyright -->
-
-			</footer>
-			<!-- /footer -->
-
-		</div>
-		<!-- /wrapper -->
-
+		<footer>
+			<div class="container">
+				<div class="row">
+					<ul class="address-block">
+						<li class="bold">The Public Classroom</li>
+						<li>University of Pennsylvania</li>
+						<li>Philadelphia, PA 19104</li>
+						<li>(215)898-5000</li>
+					</ul>
+				</div>
+				<div class="row">
+					<ul class="footer-links">
+						<li><a href="#"><span class="dashed-line-silver">Copyright</span></a></li>
+						<li><a href="#"><span class="dashed-line-silver">Disclaimer</span></a></li>
+						<li><a href="#"><span class="dashed-line-silver">Privacy Policy</span></a></li>
+					</ul>
+				</div>
+			</div>
+			
+			
+			
+		</footer>
+		
+		
 		<?php wp_footer(); ?>
+		
+		<!-- scripts -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+		<script type="text/javascript" src="http://cdn.jsdelivr.net/jquery.slick/1.5.9/slick.min.js"></script>
+		<script src="https://npmcdn.com/isotope-layout@3.0/dist/isotope.pkgd.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
+		<script src="<?php printThemePath(); ?>/js/main.js"></script>
 
-		<!-- analytics -->
-		<script>
-		(function(f,i,r,e,s,h,l){i['GoogleAnalyticsObject']=s;f[s]=f[s]||function(){
-		(f[s].q=f[s].q||[]).push(arguments)},f[s].l=1*new Date();h=i.createElement(r),
-		l=i.getElementsByTagName(r)[0];h.async=1;h.src=e;l.parentNode.insertBefore(h,l)
-		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-		ga('create', 'UA-XXXXXXXX-XX', 'yourdomain.com');
-		ga('send', 'pageview');
-		</script>
-
+		
 	</body>
 </html>

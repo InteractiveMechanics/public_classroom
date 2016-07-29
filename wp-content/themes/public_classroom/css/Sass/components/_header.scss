@@ -1,0 +1,198 @@
+/*
+
+.nav-inline-dropdown {
+	width: 100vw;
+}
+
+.nav-inline-li {
+	padding: 30px;
+	margin: 30px;
+}
+*/
+
+.navbar-default {
+	background-color: $white;
+    border-color: transparent;
+}
+
+.nav > li.dropdown.open {
+    position: static;
+   
+}
+.nav > li.dropdown.open .dropdown-menu {
+    display:table; 
+    width: 100%; 
+    text-align: left; 
+    left:0; 
+    right:0;
+    margin-top: 10px;
+    background-color: $blue;
+    color: #ffffff;
+    @include screen-ltmd {
+	    text-align: left;
+    }
+    &:after {
+		width: 0px;
+	    height: 0px;
+	    position: absolute;
+	    top: 0%;
+	    right: 215px;;
+	    content: '';
+	    transform: translate(0%, -100%);
+	    border-left: 10px solid transparent;
+	    border-right: 10px solid transparent;
+	    border-bottom: 10px solid $blue;
+    }
+    
+}
+
+
+.dropdown-menu>li {
+    display: table-cell; // or inline-block
+    @include screen-ltmd {
+	    display: initial;
+    }
+}
+
+.navbar-default .navbar-nav>li>a {
+	@include screen-xs {
+		color: $white;
+	}
+}
+
+.navbar-default .navbar-nav>.open>a {
+	color: $blue;
+	background-color: transparent;
+	transition: $transition;
+}
+
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover {
+	background-color: transparent;
+	color: $blue;
+}
+
+.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
+	color: $blue;
+	@include screen-xs {
+		color: $offwhite;
+	}
+}
+
+
+.nav-img-container {
+	height: 85px;
+	overflow: hidden;
+	@include screen-ltmd {
+		float: left;
+		width: 100px;
+		height: 100px;
+		overflow: hidden;
+		
+	}
+}
+
+
+
+.nav-img {
+	width: 100%;
+	height: auto;
+	@include screen-ltmd {
+		height: 100%;
+		width: initial;
+	}
+}
+
+.nav-class-title {
+	white-space: pre-wrap;
+	text-transform: uppercase;
+	color: #ffffff;
+}
+
+.nav-address-container {
+	p {
+		margin-bottom: 0px;
+	}
+}
+
+.nav-map {
+	display: block;
+	color: #ffffff;
+	transition: $transition;
+	&:hover, &:active, &:focus {
+		color: $offwhite;
+	}
+}
+
+
+
+.nav-text-container {
+	padding: 10px 20px 0px;
+	margin-bottom: 2.0em;
+	@include screen-ltmd {
+		float: left;
+		margin-left: 1.5em;
+		margin-bottom: 2.0em;
+	}
+	@include screen-sm {
+		width: 70%;
+	}
+	@include screen-xs {
+		width: 50%;
+	}
+}
+
+.nav-details-btn {
+	margin: 10px 0px;
+	display: block;
+	padding: 6px 12px;
+	text-transform: uppercase;
+	text-align: center;
+	@include big-button($white, $blue);
+	@include screen-ltmd {
+		display: inline-block !important;
+	}
+}
+
+.nav-register-btn {
+	margin: 10px 0px;
+	display: block;
+	padding: 6px 12px;
+	text-transform: uppercase;
+	text-align: center;
+	@include big-button-2($white, $blue);
+	@include screen-ltmd {
+		display: inline-block;
+	}
+}
+
+.navbar-default .navbar-toggle {
+	border-color: transparent;
+	transition: $transition;
+	&:hover {
+		background-color: $white;
+		.icon-bar {
+			background-color: $silver;
+		}
+	}
+	&:focus {
+		background-color: $white;
+		.icon-bar {
+			background-color: $silver;
+		}
+		
+	}
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: $blue;
+    
+}
+
+
+.navbar-collapse {
+	@include screen-xs {
+	background-color: $blue;
+	color: $white;
+	}
+}
+

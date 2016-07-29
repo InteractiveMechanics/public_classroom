@@ -1,0 +1,27 @@
+a {
+	&:hover {
+		text-decoration: none;
+		
+	}
+}
+
+.bold {
+	font-family: $gotham-bold;
+}
+
+.dashed-line {
+	border-bottom-width: 2px;
+    border-bottom-style: dotted;
+}
+
+.dashed-line-white {
+	@extend .dashed-line;
+	border-bottom-color: $white;
+}
+
+.dashed-line-silver {
+	@extend .dashed-line;
+	border-bottom-color: $silver;
+}
+
+
