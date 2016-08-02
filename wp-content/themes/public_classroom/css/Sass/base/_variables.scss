@@ -1,9 +1,11 @@
 // Colors
-$blue:				#01256e;
-$red:				#95001a;
-$silver:			#a2aaad;
+$blue:				#134984;
+$red:				#aa2d3e;
+$silver:			#b0b7bc;
 $white:				#ffffff;
-$offwhite:			darken($white, 15%);
+$offwhite:			#f1f1f2;
+$gray:				#d1d3d4;
+$black:				#231F20;
 
 // Fonts
 $gotham-blackital:  'Gotham-BlackItalic', Helvetica, Arial, sans-serif;
@@ -13,6 +15,10 @@ $gotham-boldital:	'Gotham-BoldItalic', Helvetica, Arial, sans-serif;
 $gotham-book:		'Gotham-Book', Helvetica, Arial, sans-serif;
 $gotham-bookital:   'Gotham-BookItalic', Helvetica, Arial, sans-serif;
 $gotham-medium:	    'Gotham-Medium', Helvetica, Arial, sans-serif;
+$scalasans-regular: 'ScalaSans-Regular', Helvetica, Arial, sans-serif;
+$scalasans-bold: 	'ScalaSans-Bold', Helvetica, Arial, sans-serif;
+$scalasans-italic:	'ScalaSans-Italic', Helvetica, Arial, sans-serif;
+
 
 // Media Queries
 $screen-xxs:        'max-width: 480px';

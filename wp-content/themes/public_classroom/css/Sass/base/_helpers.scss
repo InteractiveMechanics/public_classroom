@@ -9,8 +9,16 @@ a {
 	font-family: $gotham-bold;
 }
 
+.no-left-padding {
+	padding-left: 0px;
+}
+
+.no-padding {
+	padding: 0px;
+}
+
 .dashed-line {
-	border-bottom-width: 2px;
+	border-bottom-width: 1px;
     border-bottom-style: dotted;
 }
 

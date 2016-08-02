@@ -1,0 +1,248 @@
+.jumbotron {
+	height: 500px;
+	background: $blue;
+	background-image: url('http://blog.schooloutfitters.com/wp-content/uploads/2014/06/one-room-schoolhouse.jpg');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	border-radius: 0px;
+	display: flex;
+    flex-direction: column;
+    justify-content: center;
+	h1 {
+		color: $white;
+		font-size: 70px;	
+	}
+}
+
+.front-video-container {
+	background-color: $white;
+	height: 100%;
+	margin-top: -75px;
+	padding-left: 0px;
+}
+
+.front-video-wrapper {
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	padding-top: 0px;
+	height: 0;
+}
+
+.front-video {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.front-video-container-right {
+	padding: 15px;
+}
+
+
+$color-button:       #fff;
+$color-button-hover: #f00;
+
+.videoWrapper {
+  position: relative;
+  width: 100%;
+  height: 0;
+  background-color: #000;
+  &43 {
+    padding-top: 75%;
+  } 
+  &169 {
+    padding-top: 56%;
+  } 
+}
+.videoIframe {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+}
+.videoPoster {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  border: 0;
+  outline: none;
+  background-position: 50% 50%;
+  background-size: 100% 100%;
+  background-size: cover;
+  background-color: $black;
+  //text-indent: -999em;
+  overflow: hidden;
+  opacity: 1;
+  -webkit-transition: opacity 800ms, height 0s;
+  -moz-transition: opacity 800ms, height 0s;
+  transition: opacity 800ms, height 0s;
+  -webkit-transition-delay: 0s, 0s;
+  -moz-transition-delay: 0s, 0s;
+  transition-delay: 0s, 0s;
+/*
+  &:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 80px;
+    height: 80px;
+    margin: -40px 0 0 -40px;
+    border: 5px solid $color-button;
+    border-radius: 100%;
+    -webkit-transition: border-color 300ms;
+    -moz-transition: border-color 300ms;
+    transition: border-color 300ms;
+  }
+*/
+  &:after {
+    content: 'Watch Course Preview';
+	text-transform: uppercase;
+	padding: 15px 20px;
+    height: 50px;
+    background-color: $white; 
+    font-family: $gotham-bold;
+    color: $blue;
+    }
+  &:hover,
+  &:focus {
+    &:before {
+      border-color: $color-button-hover;
+    }
+    &:after {
+      border-left-color: $color-button-hover;
+    }
+  }
+  .videoWrapperActive & {
+    opacity: 0;
+    height: 0;
+    -webkit-transition-delay: 0s, 800ms;
+    -moz-transition-delay: 0s, 800ms;
+    transition-delay: 0s, 800ms;
+  }
+}
+
+.front-class-block-container {
+	display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0px;
+    margin: 0 -1.5%;
+
+}
+
+
+
+
+.class-block {
+	margin-bottom: 30px;
+    width: 30.33%;
+    margin: 20px 1.5%;
+}
+
+
+.class-top {
+	display: block;
+    top: 0;
+    position: relative;
+    box-shadow: 0 5px 0 transparent;
+    transition: all 0.5s;
+    img {
+	    width: 100%;
+		height: auto;
+    }
+}
+
+
+
+.class-block-text {
+	display: flex;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	height: 100%;
+	background-color: rgba(123, 123, 123, 0.5);
+	
+	flex-direction: column;
+	justify-content: center;
+	color: $white;
+	padding: 20px;
+}
+
+.single-class-date, .single-class-title {
+	margin: 0px;
+}
+
+.single-class-title {
+	text-transform: uppercase;
+}
+
+
+.speaker-list {
+	padding-left: 0px;
+	li {
+		&:last-of-type {
+			a {
+				&:before {
+					content: ' and ';
+					font-family: $scalasans-regular;
+					border-bottom: 1px dotted transparent;
+				}
+				&:after {
+					content: '. ';
+				}
+			}
+		}
+	display: inline-block;
+		a {
+			font-family: $scalasans-bold;
+			color: $black;
+			border-bottom: 1px dotted $black;
+			&:after {
+				content: ", ";
+				
+			}
+			
+		}
+	}
+}
+
+.class-description {
+	display: inline;
+}
+
+.class-description-container {
+	background-color: $white;
+	padding: 20px;
+}
+
+.front-btn-container {
+	display: flex;
+	justify-content: space-between;
+}
+
+
+.front-btn {
+	width: 45%;
+	margin: 10px 0px;
+	display: inline-block;
+	padding: 6px 12px;
+	text-transform: uppercase;
+	text-align: center;
+	//border: 1px solid $blue;
+	@include big-button($blue, $white);
+}
+
