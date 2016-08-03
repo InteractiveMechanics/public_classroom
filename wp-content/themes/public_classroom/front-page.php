@@ -20,7 +20,11 @@ get_header(); ?>
 	
 	<div class="jumbotron homepage-hero">
 		<div class="container">	
-			<h1 class="homepage-headline">Lorem ipsum dolor sit amet, consectetur adipiscing elit</h1>
+			<div class="row">
+				<div class="col-sm-10 col-sm-offset-1 no-padding">
+					<h1 class="homepage-headline">Lorem ipsum dolor sit amet, consectetur adipiscing elit</h1>
+				</div>
+			</div>
 		</div>	
 	 </div>
 	
@@ -206,6 +210,54 @@ get_header(); ?>
 		</div>
 	</section>
 	
+	<section class="mlk-section">
+		<div class="mlk-img-container">
+			<img class="mlk-img" src="<?php printthemepath(); ?>/img/quote-image.jpg" alt="mlk img">
+			<blockquote class="mlk-quote">
+				<p>Our lives begin to end the day we become silent about things that matter</p>
+				<footer><cite><h4>Martin Luther King Jr.</h4></cite></footer>
+			</blockquote>
+		</div>
+	</section>
+	
+	
+	<section class="sponsor-section">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-10 col-sm-offset-1 no-padding">
+					<h3 class="sponsor-heading">Sponsors &amp; Partners</h3>
+					
+					<div class="sponsor-container">
+						
+						<div class="sponsor-block">
+							<a href="#">
+								<img src="<?php printthemepath(); ?>/img/sponsor-campaign-for-community@2x.jpg" alt="sponsor logo">
+							</a>
+						</div>
+						
+						<div class="sponsor-block">
+							<a href="#">
+								<img src="<?php printthemepath(); ?>/img/sponsor-campaign-for-community@2x.jpg" alt="sponsor logo">
+							</a>
+						</div>
+						
+						<div class="sponsor-block">
+							<a href="#">
+								<img src="<?php printthemepath(); ?>/img/sponsor-campaign-for-community@2x.jpg" alt="sponsor logo">
+							</a>
+						</div>
+						
+						<div class="sponsor-block">
+							<a href="#">
+								<img src="<?php printthemepath(); ?>/img/sponsor-campaign-for-community@2x.jpg" alt="sponsor logo">
+							</a>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 	
 </main>
 <?php endwhile; ?>

@@ -1,15 +1,19 @@
 		<footer>
 			<div class="container">
 				<div class="row">
+					<img src="<?php printthemepath(); ?>/img/footer-logo@2x.jpg" alt="Penn Museum logo">
+<!--
 					<ul class="address-block">
 						<li class="bold">The Public Classroom</li>
 						<li>University of Pennsylvania</li>
 						<li>Philadelphia, PA 19104</li>
 						<li>(215)898-5000</li>
 					</ul>
+-->
 				</div>
 				<div class="row">
 					<ul class="footer-links">
+						<li><a href="#"><span class="dashed-line-silver">Public Programs</span></a></li>
 						<li><a href="#"><span class="dashed-line-silver">Copyright</span></a></li>
 						<li><a href="#"><span class="dashed-line-silver">Disclaimer</span></a></li>
 						<li><a href="#"><span class="dashed-line-silver">Privacy Policy</span></a></li>

@@ -176,4 +176,22 @@ section {
 	padding-bottom: 60px;
 }
 
+blockquote {
+	border: none;
+}
+
+blockquote p {
+	font-family: $scalasans-italic;
+	font-size: 2.5em;
+}
+
+blockquote footer {
+	background-color: transparent;
+	padding: initial;
+	border: none;
+}
+
+blockquote .small:before, blockquote footer:before, blockquote small:before {
+	content: '';
+}
 
