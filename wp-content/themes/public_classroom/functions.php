@@ -6,5 +6,11 @@ function printThemePath() {
 
 add_theme_support( 'post-thumbnails' );
 
+register_nav_menus( array(
+    'primary' => __( 'Primary Menu' ), 
+) );
+
+require_once('wp_bootstrap_navwalker.php');
+
 
 ?>

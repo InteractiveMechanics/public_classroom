@@ -1,0 +1,66 @@
+.speakers-hero {
+	height: 350px;
+	background: $blue;
+	background-image: url('http://blog.schooloutfitters.com/wp-content/uploads/2014/06/one-room-schoolhouse.jpg');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	border-radius: 0px;
+	display: flex;
+    flex-direction: column;
+    justify-content: center;
+	h1 {
+		color: $white;
+		font-size: 70px;	
+	}
+	h4 {
+		color: $white;
+	}
+}
+
+.speaker-section {
+	padding-top: 40px;
+}
+
+
+.speaker-block {
+	margin-bottom: 30px;
+}
+
+
+.speaker-img {
+	width: 100%;
+	height: auto;
+}
+
+
+.speaker-block-text {
+	display: flex;
+	position: absolute;
+	top: 0px;
+	width: 90.5%;
+	left: 15px;
+	height: 100%;
+	background-color: rgba(123, 123, 123, 0.5);
+	flex-direction: column;
+	justify-content: flex-end;
+	color: $white;
+	//padding: 20px;
+	h5 {
+		margin-left: 20px;
+	}
+	p {
+		margin: 0px 0px 5px 20px;
+		&:last-of-type {
+			margin-bottom: 15px;
+		}
+	}
+
+}
+
+button[data-toggle="modal"] {
+	text-align: left;
+	background-color: transparent;
+	padding: 0px;
+	border: none;
+}

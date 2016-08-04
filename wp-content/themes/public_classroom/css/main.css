@@ -410,7 +410,68 @@ footer {
     .footer-links li a {
       color: #b0b7bc; }
 
-.jumbotron {
+.modal {
+  padding-right: 0px;
+  top: 20%;
+  left: 0px;
+  right: 40px; }
+
+.modal-backdrop {
+  background-color: #ffffff; }
+
+.modal-content {
+  background-color: #134984;
+  border-radius: 0px;
+  box-shadow: none;
+  color: #ffffff;
+  margin: 0px; }
+  .modal-content h4 {
+    color: #ffffff; }
+  .modal-content li a {
+    color: #ffffff;
+    border-bottom: 1px dotted #ffffff;
+    font-family: "ScalaSans-Regular", Helvetica, Arial, sans-serif; }
+
+.modal-body {
+  padding: 0px 30px 30px; }
+  .modal-body h4 {
+    margin-top: 30px; }
+
+.modal-header {
+  padding: 15px 30px;
+  border-bottom: none; }
+
+.modal-title {
+  float: left;
+  margin-top: 15px; }
+
+.modal-header .close {
+  float: right;
+  margin-top: -3px;
+  margin-right: -15px; }
+
+.close {
+  opacity: 0.75; }
+  .close:hover {
+    opacity: 1.0; }
+  .close svg {
+    fill: #ffffff;
+    height: 25px;
+    width: 25px;
+    font-size: 30px;
+    font-weight: 300; }
+
+.modal-dialog {
+  position: absolute;
+  right: -5px;
+  width: initial;
+  margin: 0px 0px 60px 4px; }
+
+.modal-img-container img {
+  margin-top: 0px;
+  margin-left: 20px; }
+
+.homepage-hero {
   height: 500px;
   background: #134984;
   background-image: url("http://blog.schooloutfitters.com/wp-content/uploads/2014/06/one-room-schoolhouse.jpg");
@@ -421,7 +482,7 @@ footer {
   display: flex;
   flex-direction: column;
   justify-content: center; }
-  .jumbotron h1 {
+  .homepage-hero h1 {
     color: #ffffff;
     font-size: 70px; }
 
@@ -681,5 +742,56 @@ footer {
   .sponsor-block img {
     width: 100%;
     height: auto; }
+
+.speakers-hero {
+  height: 350px;
+  background: #134984;
+  background-image: url("http://blog.schooloutfitters.com/wp-content/uploads/2014/06/one-room-schoolhouse.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+  .speakers-hero h1 {
+    color: #ffffff;
+    font-size: 70px; }
+  .speakers-hero h4 {
+    color: #ffffff; }
+
+.speaker-section {
+  padding-top: 40px; }
+
+.speaker-block {
+  margin-bottom: 30px; }
+
+.speaker-img {
+  width: 100%;
+  height: auto; }
+
+.speaker-block-text {
+  display: flex;
+  position: absolute;
+  top: 0px;
+  width: 90.5%;
+  left: 15px;
+  height: 100%;
+  background-color: rgba(123, 123, 123, 0.5);
+  flex-direction: column;
+  justify-content: flex-end;
+  color: #ffffff; }
+  .speaker-block-text h5 {
+    margin-left: 20px; }
+  .speaker-block-text p {
+    margin: 0px 0px 5px 20px; }
+    .speaker-block-text p:last-of-type {
+      margin-bottom: 15px; }
+
+button[data-toggle="modal"] {
+  text-align: left;
+  background-color: transparent;
+  padding: 0px;
+  border: none; }
 
 /*# sourceMappingURL=main.css.map */

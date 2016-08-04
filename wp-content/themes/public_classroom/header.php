@@ -190,7 +190,7 @@
 <!-- 									</ul> -->
 								</ul>
 						  	</li>
-						  	<li><a href="#">About</a></li>
+						  	<li><a href="<?php printthemepath(); ?>/about.php">About</a></li>
 						  	<li><a href="#">Speakers</a></li>
 				        </ul>
 				    </div><!-- /.navbar-collapse -->
