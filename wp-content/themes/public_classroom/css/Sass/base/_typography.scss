@@ -173,6 +173,7 @@ p {
 }
 
 section {
+	padding-top: 60px;
 	padding-bottom: 60px;
 }
 
@@ -194,4 +195,15 @@ blockquote footer {
 blockquote .small:before, blockquote footer:before, blockquote small:before {
 	content: '';
 }
+
+.lead {
+	font-family: $scalasans-italic;
+	font-size: 2.35em;
+}
+
+a {
+	color: initial;
+}
+
+
 

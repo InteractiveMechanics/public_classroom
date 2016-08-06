@@ -9,6 +9,10 @@ a {
 	font-family: $gotham-bold;
 }
 
+.underline {
+	text-decoration: underline;
+}
+
 .no-left-padding {
 	padding-left: 0px;
 }
@@ -30,6 +34,10 @@ a {
 .dashed-line-silver {
 	@extend .dashed-line;
 	border-bottom-color: $silver;
+}
+
+.section-border {
+	border-bottom: 1px solid $gray;
 }
 
 

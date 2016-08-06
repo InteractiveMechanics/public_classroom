@@ -25,6 +25,22 @@
 
 .speaker-block {
 	margin-bottom: 30px;
+	position: relative;
+}
+
+.moderator {
+	&:after {
+		content: 'moderator';
+		position: absolute;
+		top: 0px;
+		left: 35px;
+		background-color: $red;
+		color: $white;
+		padding: 3px 12px;
+		text-transform: uppercase;
+		font-family: $gotham-bold;
+		font-size: 1em;
+	}
 }
 
 

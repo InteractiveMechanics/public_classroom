@@ -31,3 +31,16 @@ function videoStop($wrapper) {
   // remove youtube link, stopping the video from playing in the background
   $iframe.attr('src','');
 }
+
+$(document).ready(function(){
+	
+		
+  $('.about-video-slider').slick({
+    dots: true,
+    arrows: false,
+    variablewidth: true
+  });
+  
+  
+});
+		
