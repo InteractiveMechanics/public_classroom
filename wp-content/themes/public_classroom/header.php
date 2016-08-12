@@ -61,7 +61,7 @@
 					        <span class="icon-bar"></span>
 						</button>
 						<a class="navbar-brand" href="<?php echo home_url(); ?>">
-							<img src="<?php printthemepath(); ?>/img/public_classroom_logo.jpg" alt="Penn Public Classroom logo">
+							<img src="<?php printthemepath(); ?>/img/public_classroom_logo.svg" alt="Penn Public Classroom logo">
 						</a>
 				    </div>
 

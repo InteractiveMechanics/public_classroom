@@ -32,10 +32,16 @@ function videoStop($wrapper) {
   $iframe.attr('src','');
 }
 
+
+
+
 $(document).ready(function(){
+
+
+	$('span.moderator-wrapper').find('.speaker-block').addClass('moderator');
 	
 		
-  $('.about-video-slider').slick({
+  $('.about-video-slider-wrapper').slick({
     dots: true,
     arrows: false,
     variablewidth: true

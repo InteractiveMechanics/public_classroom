@@ -65,32 +65,50 @@ get_header(); ?>
 	<section class="about-video-slider-container" id="videos">
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-10 col-sm-offset-1 no-padding">
-					<div class="about-video-slider-wrapper">
-						<div class="col-sm-7 no-padding about-video-slider">
-							<div>
-							<iframe src="https://player.vimeo.com/video/72716406?title=0&byline=0&portrait=0" width="569" height="320" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-							</div> 	
+				<div class="col-sm-10 col-sm-offset-1 no-padding about-video-slider-wrapper">
+					
+					
+					
+						<!-- ACF REPEATER STARTS -->
+					    <?php if ( have_rows('videos1') ): ?>
+					    <?php while ( have_rows('videos1') ): the_row();
+						    $video_embed = get_sub_field('video_embed');
+						    $video_title = get_sub_field('video_title');
+						    $video_description = get_sub_field('video_description');
+						?>
+					
+						<div class="row about-video-slider">
+							<div class="col-sm-7">
+								<?php echo $video_embed; ?>
+							</div> 
+							<div class="col-sm-5 about-video-container-right">
 								
-							
-							<div>
-							<iframe src="https://player.vimeo.com/video/72716406?title=0&byline=0&portrait=0" width="569" height="320" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-							</div>
+								<h3><?php echo $video_title; ?></h3>
+								<div class="video-description-container">
+									<?php echo $video_description; ?>
+								</div>
 								
-							
-							<div>
-							<iframe src="https://player.vimeo.com/video/72716406?title=0&byline=0&portrait=0" width="569" height="320" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 							</div>
-															
 						</div>
-					<div class="col-sm-5 about-video-container-right no-padding">
-						<h3>About the Public Classroom</h3>
-						<p>Race is a sensitive topic in this country. Individual understanding of it is at once emotional, intellectual, and confused. Everyone thinks they are experts on the topic of race, yet few issues are characterized by more contradictory assumptions and myths, as data from the Museum's 2012 focus groups on the topic attested. Yet real conversations on race are intentionally avoided, and that silence intensifies the confusions.</p>
-					</div>
-					</div>
-				</div>
-			</div>
-		</div>
+					
+						<?php endwhile; else: ?>
+							<div class="no-video">
+								<div class="no-video-wrapper">
+									<h3>No Videos Yet</h3>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+								</div>
+							</div>
+							
+						<?php endif; ?>
+						
+						<!-- END ACF REPEATER -->	
+						
+					
+			
+				
+				</div> <!-- /about-video-slider-wrapper -->
+			</div> <!-- /row -->
+		</div> <!-- /container -->
 	</section>
 
 	<section class="classes-speaker-section" id="speakers">
@@ -98,6 +116,27 @@ get_header(); ?>
 			<div class="row">
 				<div class="col-sm-10 col-sm-offset-1 no-padding">
 					<h3>Speakers &amp; Moderator</h3>
+						<div class="classes-speakers-wrapper">
+					
+						
+						<?php
+
+							$post_object = get_field('moderator');
+							
+							if( $post_object ): 
+							
+								// override $post
+								$post = $post_object;
+								setup_postdata( $post ); 
+							
+								?>
+							    <span class="moderator-wrapper"><?php get_template_part('content-speaker',  get_post_format()) ?></span>
+							    <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
+						<?php endif; ?>
+													
+						
+						
+						
 					
 						<?php 
 
@@ -117,7 +156,7 @@ get_header(); ?>
 									<?php endif; ?>    
 					
 					
-					
+						</div>
 				</div>
 			</div>
 		</div>

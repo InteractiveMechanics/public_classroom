@@ -13,11 +13,27 @@
 .navbar {
 	margin-bottom: 0px;
 	border-radius: 0px;
+	min-height: 100px;
 }
 
 .navbar-default {
 	background-color: $white;
     border-color: transparent;
+}
+
+.navbar-brand {
+	margin-left: 0px;
+	transition: $transition;
+	&:hover, &:active, &:focus {
+		opacity: 0.75;
+	}
+	img {
+		height: 65px;
+	}
+}
+
+.navbar-right {
+	margin-top: 25px;
 }
 
 .nav > li.dropdown.open {
@@ -30,9 +46,11 @@
     text-align: left; 
     left:0; 
     right:0;
+    top: 78px;
     margin-top: 10px;
     background-color: $blue;
     color: #ffffff;
+    z-index: 9999;
     @include screen-ltmd {
 	    text-align: left;
     }
@@ -41,12 +59,12 @@
 	    height: 0px;
 	    position: absolute;
 	    top: 0%;
-	    right: 215px;;
+	    right: 202px;;
 	    content: '';
 	    transform: translate(0%, -100%);
-	    border-left: 10px solid transparent;
-	    border-right: 10px solid transparent;
-	    border-bottom: 10px solid $blue;
+	    border-left: 0px solid transparent;
+	    border-right: 20px solid transparent;
+	    border-bottom: 19px solid $blue;
     }
     
 }

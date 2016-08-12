@@ -46,30 +46,45 @@ get_header(); ?>
 	<section class="about-video-slider-container">
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-10 col-sm-offset-1 no-padding">
-					<div class="about-video-slider-wrapper">
-						<div class="col-sm-7 no-padding about-video-slider">
-							<div>
-							<iframe src="https://player.vimeo.com/video/72716406?title=0&byline=0&portrait=0" width="569" height="320" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-							</div> 	
+				
+				<div class="col-sm-10 col-sm-offset-1 no-padding about-video-slider-wrapper">
+					
+					
+					
+						<!-- ACF REPEATER STARTS -->
+					    <?php if ( have_rows('about_page_videos') ): ?>
+					    <?php while ( have_rows('about_page_videos') ): the_row();
+						    $video_embed = get_sub_field('video_embed');
+						    $video_title = get_sub_field('video_title');
+						    $video_description = get_sub_field('video_description');
+						?>
+					
+						<div class="row about-video-slider">
+							<div class="col-sm-7">
+								<?php echo $video_embed; ?>
+							</div> 
+							<div class="col-sm-5 about-video-container-right">
 								
-							
-							<div>
-							<iframe src="https://player.vimeo.com/video/72716406?title=0&byline=0&portrait=0" width="569" height="320" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-							</div>
+								<h3><?php echo $video_title; ?></h3>
+								<div class="video-description-container">
+									<?php echo $video_description; ?>
+								</div>
 								
-							
-							<div>
-							<iframe src="https://player.vimeo.com/video/72716406?title=0&byline=0&portrait=0" width="569" height="320" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 							</div>
-															
 						</div>
-					<div class="col-sm-5 about-video-container-right no-padding">
-						<h3>About the Public Classroom</h3>
-						<p>Race is a sensitive topic in this country. Individual understanding of it is at once emotional, intellectual, and confused. Everyone thinks they are experts on the topic of race, yet few issues are characterized by more contradictory assumptions and myths, as data from the Museum's 2012 focus groups on the topic attested. Yet real conversations on race are intentionally avoided, and that silence intensifies the confusions.</p>
-					</div>
-					</div>
-				</div>
+					
+						<?php endwhile; ?>
+
+						
+						<?php endif; ?>
+						
+						<!-- END ACF REPEATER -->	
+						
+					
+			
+				
+				</div> <!-- /about-video-slider-wrapper -->
+				
 			</div>
 		</div>
 	</section>

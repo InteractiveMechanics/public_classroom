@@ -146,7 +146,7 @@ h2 {
 }
 
 h3 {
-	font-size: 1.50em;
+	font-size: 1.35em;
 	color: $blue;
 	font-family: $gotham-bold;
 }
@@ -168,8 +168,9 @@ h2, h3, h4 {
 
 
 p {
-	font-size: 1.10em;
+	font-size: 1.25em;
 	font-family: $scalasans-regular;
+	line-height: 1.8;
 }
 
 section {
@@ -183,7 +184,8 @@ blockquote {
 
 blockquote p {
 	font-family: $scalasans-italic;
-	font-size: 2.5em;
+	font-size: 2.25em;
+	line-height: 1.6;
 }
 
 blockquote footer {
