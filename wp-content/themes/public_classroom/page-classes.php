@@ -11,6 +11,17 @@ get_header(); ?>
 
   <?php /* The loop */ ?>
   <?php while ( have_posts() ) : the_post();
+	  $cover_image = get_field('cover_image');
+	  $date = get_field('date');
+	  $title = get_field('title');
+	  $focus_question = get_field('focus_question');
+	  $class_description = get_field('class_description');
+	  $collection_description = get_field('collection_description');
+	  $resources_heading = get_field('resources_heading');
+	  $resources_description = get_field('resources_description');
+	  $quiz_title = get_field('quiz_title');
+	  $quiz_file_type = get_field('quiz_file_type');
+	  $optional_description = get_field('optional_description');
   ?>
     
   <main>
@@ -23,13 +34,13 @@ get_header(); ?>
 				<li><a href="#resources">Resources &amp; Workbook</a></li>
 			</ul>
  
-	  	<div class="jumbotron speakers-hero">
+	  	<div class="jumbotron speakers-hero" style="background-image: url('<?php echo $cover_image; ?>');">
 		<div class="container">	
 			<div class="row">
 				
 				<div class="col-sm-10 col-sm-offset-1 no-padding">
-					<h4>September 21, 2016</h4>
-					<h1 class="homepage-headline">Lorem ipsum dolor sit amet, consectetur adipiscing elit</h1>
+					<h4><?php echo $date; ?></h4>
+					<h1 class="homepage-headline"><?php echo $title; ?></h1>
 				</div>
 			</div>
 		</div>	
@@ -42,13 +53,10 @@ get_header(); ?>
 				<div class="col-sm-7 col-sm-offset-1 no-padding">
 					<h4><span><img src="<?php printthemepath(); ?>/img/icon-bubble.svg" alt="quote bubble icon"></span> Focus Question</h4>
 					
-					<p class="lead">Does the concept of Race have any scientific validity? How did the concept of race originate?</p>
+					<p class="lead"><?php echo $focus_question?></p>
 					
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dictum eleifend semper. Nam ut hendrerit magna. Sed fringilla, nulla at consequat vulputate, elit tortor ultricies nisi, non interdum nisl turpis a libero. Nulla facilisi. Proin venenatis nulla ultrices tellus pretium blandit. Fusce at dictum magna. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Cras consequat eleifend fringilla. Vestibulum vehicula dui at massa pulvinar iaculis.Pellentesque lacinia arcu a posuere sodales. Fusce risus est, vestibulum id odio bibendum, dignissim auctor felis. Nulla vitae eros pretium, imperdiet enim eu, imperdiet tellus. Praesent hendrerit convallis est, id aliquam dui maximus nec. Etiam non tellus urna. Donec posuere augue semper porta egestas. Integer ut tincidunt risus, ut fermentum nisi.</p>
+					<?php echo $class_description; ?>
 					
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dictum eleifend semper. Nam ut hendrerit magna. Sed fringilla, nulla at consequat vulputate, elit tortor ultricies nisi, non interdum nisl turpis a libero. Nulla facilisi. Proin venenatis nulla ultrices tellus pretium blandit. Fusce at dictum magna. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Cras consequat eleifend fringilla. Vestibulum vehicula dui at massa pulvinar iaculis.Pellentesque lacinia arcu a posuere sodales. Fusce risus est, vestibulum id odio bibendum, dignissim auctor felis. Nulla vitae eros pretium, imperdiet enim eu, imperdiet tellus. Praesent hendrerit convallis est, id aliquam dui maximus nec. Etiam non tellus urna. Donec posuere augue semper porta egestas. Integer ut tincidunt risus, ut fermentum nisi.</p>
-					
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dictum eleifend semper. Nam ut hendrerit magna. Sed fringilla, nulla at consequat vulputate, elit tortor ultricies nisi, non interdum nisl turpis a libero. Nulla facilisi. Proin venenatis nulla ultrices tellus pretium blandit. Fusce at dictum magna. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Cras consequat eleifend fringilla. Vestibulum vehicula dui at massa pulvinar iaculis.Pellentesque lacinia arcu a posuere sodales. Fusce risus est, vestibulum id odio bibendum, dignissim auctor felis. Nulla vitae eros pretium, imperdiet enim eu, imperdiet tellus. Praesent hendrerit convallis est, id aliquam dui maximus nec. Etiam non tellus urna. Donec posuere augue semper porta egestas. Integer ut tincidunt risus, ut fermentum nisi.</p>
 				</div>
 			</div>
 		</div>
@@ -91,35 +99,25 @@ get_header(); ?>
 				<div class="col-sm-10 col-sm-offset-1 no-padding">
 					<h3>Speakers &amp; Moderator</h3>
 					
-					<div class="col-sm-4 speaker-block">
-						<img class="speaker-img" src="<?php printthemepath(); ?>/img/speaker-jay-kaufman.jpg" alt="speaker placeholder">
-						<div class="speaker-block-text">
-							<h5>Jay Kaufman</h5>
-							<p>Faculty of Medicine, Department of Epidemiology & Biostatistics</p>
-							<p>McGill Centre on Population Dynamics</p>
-							<p>McGill University</p>
-						</div>
-					</div>
-					
-					<div class="col-sm-4 speaker-block moderator">
-						<img class="speaker-img" src="<?php printthemepath(); ?>/img/speaker-carolyn-rouse.jpg" alt="speaker placeholder">
-						<div class="speaker-block-text">
-							<h5>Carolyn Rouse</h5>
-							<p>Associate Anthropology Professor</p>
-							<p>Princeton University</p>
-						</div>
-					</div>
-					
-					<div class="col-sm-4 speaker-block">
-						<img class="speaker-img" src="<?php printthemepath(); ?>/img/speaker-jay-kaufman.jpg" alt="speaker placeholder">
-						<div class="speaker-block-text">
-							<h5>Jay Kaufman</h5>
-							<p>Faculty of Medicine, Department of Epidemiology & Biostatistics</p>
-							<p>McGill Centre on Population Dynamics</p>
-							<p>McGill University</p>
+						<?php 
 
-						</div>
-					</div>
+									$post_objects = get_field('speakers');
+
+									if( $post_objects ): ?>
+								    
+								    
+								    
+									    
+									<?php foreach( $post_objects as $post): ?>
+									 <?php setup_postdata($post); ?>
+										<?php get_template_part('content-speaker',  get_post_format()) ?>
+								    <?php endforeach; ?>
+								    
+								    <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
+									<?php endif; ?>    
+					
+					
+					
 				</div>
 			</div>
 		</div>
@@ -135,50 +133,50 @@ get_header(); ?>
 	<section class="classes-collection-section" id="collection">
 		<div class="container">
 			<div class="row">
+				
 				<div class="col-sm-10 col-sm-offset-1 no-padding">
 					<h3>Collection Workshop</h3>
 				</div>
+				
 				<div class="col-sm-7 col-sm-offset-1 no-padding">
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dictum eleifend semper. Nam ut hendrerit magna. Sed fringilla, nulla at consequat vulputate, elit tortor ultricies nisi, non interdum nisl turpis a libero. Nulla facilisi. Proin venenatis nulla ultrices tellus pretium blandit. Fusce at dictum magna. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>					
+					<?php echo $collection_description; ?>					
 				</div>
+				
+				
 				<div class="col-sm-10 col-sm-offset-1 no-padding">
 					<div class="classes-collection-wrapper">
+					
+						<!-- ACF REPEATER STARTS -->
+					    <?php if ( have_rows('collection_object') ): ?>
+					    <?php while ( have_rows('collection_object') ): the_row();
+						    $object_image = get_sub_field('object_image');
+						    $object_title = get_sub_field('object_title');
+						    $object_label = get_sub_field('object_label');
+						?>
 						
-					<div class="col-sm-4 speaker-block">
-						<img class="speaker-img" src="<?php printthemepath(); ?>/img/collection_001.jpg" alt="speaker placeholder">
-						<div class="speaker-block-text">
-							<h5>Object Title</h5>
-							<p>Collection Name</p>
-							<p>Organization or Institution</p>
+						<div class="col-sm-4 speaker-block">
+							<img class="speaker-img" src="<?php echo $object_image; ?>">
+							
+							<div class="speaker-block-text">
+								<h5><?php echo $object_title; ?></h5>
+								<p><?php echo $object_label; ?></p>
+							</div>
+							
 						</div>
-					</div>
 					
-					<div class="col-sm-4 speaker-block">
-						<img class="speaker-img" src="<?php printthemepath(); ?>/img/collection_001.jpg" alt="speaker placeholder">
-						<div class="speaker-block-text">
-							<h5>Object Title</h5>
-							<p>Collection Name</p>
-							<p>Organization or Institution</p>
-						</div>
+						<?php endwhile; ?>
+						<?php endif; ?>
+						<!-- END ACF REPEATER -->	
+							
 					</div>
-					
-					<div class="col-sm-4 speaker-block">
-						<img class="speaker-img" src="<?php printthemepath(); ?>/img/collection_001.jpg" alt="speaker placeholder">
-						<div class="speaker-block-text">
-							<h5>Object Title</h5>
-							<p>Collection Name</p>
-							<p>Organization or Institution</p>
-						</div>
-					</div>
-					
-					</div>
-
-					
 				</div>
+				
+				
 			</div>
 		</div>
-		
 	</section>
+	
+	
 	
 	<div class="container">
 		<div class="row">
@@ -191,56 +189,50 @@ get_header(); ?>
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-10 col-sm-offset-1 no-padding">
-					<h3>Resources &amp; Workbook</h3>
+					<h3><?php echo $resources_heading; ?></h3>
 				</div>
 				<div class="col-sm-7 col-sm-offset-1 no-padding">
-					<p class="resources-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur iaculis ipsum arcu, vitae porttitor purus sagittis sit amet. Etiam nec lobortis mauris. Praesent vel elit vel felis pulvinar tincidunt. Vestibulum in orci eu urna auctor sodales. Curabitur nisi mauris, lacinia at felis eget, facilisis auctor dolor. Vestibulum luctus iaculis varius. Vestibulum vestibulum nec ante et venenatis.</p>
+					<p class="resources-description"><?php echo $resources_description; ?></p>
 					
+					<?php if(!empty($quiz_title)) { ?>
 					<div class="resources-block-quiz">
 						<div class="col-sm-9">
-						<p class="resources-title">Class Quiz </p>
-						<h3 class="file-type">PDF</h3>
-						<p><span class="useful">Useful For:</span> Before Class Starts</p>
-						<p>Suggested Article</p>
+						<p class="resources-title"><?php echo $quiz_title; ?></p>
+						<h3 class="file-type"><?php echo $quiz_file_type; ?></h3>
+						<p><span class="useful">Useful For:</span> <?php echo implode(', ', get_field('quiz_useful_for')); ?></p>
+						<p><?php echo $optional_description; ?></p>
 						</div>
 						<div class="col-sm-3 resources-download-btn-container">
 							<a href="" class="resources-quiz-download-btn">Download</a>
 						</div>
 					</div>
+					<?php } ?>
 					
+					<!-- ACF REPEATER STARTS -->
+					    <?php if ( have_rows('resource_block') ): ?>
+					    <?php while ( have_rows('resource_block') ): the_row();
+						    $resource_title = get_sub_field('resource_title');
+						    $resource_file_type = get_sub_field('resource_file_type');
+						    $resource_optional_description = get_sub_field('resource_optional_description');
+						    
+						?>
 					<div class="resources-block">
 						<div class="col-sm-9">
-						<p class="resources-title">Class Workbook </p>
-						<h3 class="file-type">PDF</h3>
-						<p><span class="useful">Useful For:</span> Before Class Starts</p>
-						<p>Suggested Article</p>
+						<p class="resources-title"><?php echo $resource_title; ?></p>
+						<h3 class="file-type"><?php echo $resource_file_type; ?></h3>
+						<p><span class="useful">Useful For:</span><?php echo implode(', ', get_sub_field('resource_useful_for')); ?></p>
+						<p><?php echo $resource_optional_description; ?></p>
 						</div>
 						<div class="col-sm-3 resources-download-btn-container">
 							<a href="" class="resources-download-btn">Download</a>
 						</div>
 					</div>
 					
-					<div class="resources-block">
-						<div class="col-sm-9">
-						<p class="resources-title">Racial Theories in Physical Anthropology: 1850-1918</p>
-						<h3 class="file-type">PDF</h3>
-						<p><span class="useful">Useful For:</span>During Class</p>
-						</div>
-						<div class="col-sm-3 resources-download-btn-container">
-							<a href="" class="resources-download-btn">Download</a>
-						</div>
-					</div>
+					<?php endwhile; ?>
+					<?php endif; ?>
+					<!-- END ACF REPEATER -->	
 					
-					<div class="resources-block">
-						<div class="col-sm-9">
-						<p class="resources-title">WHYY Podcast</p>
-						<h3 class="file-type">Podcast</h3>
-						<p><span class="useful">Useful For:</span>During Class</p>
-						</div>
-						<div class="col-sm-3 resources-download-btn-container">
-							<a href="" class="resources-download-btn">View Online</a>
-						</div>
-					</div>
+					
 
 					
 				</div>

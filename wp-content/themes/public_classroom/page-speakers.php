@@ -11,15 +11,20 @@ get_header(); ?>
 
   <?php /* The loop */ ?>
   <?php while ( have_posts() ) : the_post();
-	  ?>
+	  $cover_image = get_field('cover_image');
+	  $header_label = get_field('header_label');
+	  $header_copy = get_field('header_copy');
+
+	  
+  ?>
     
   <main>
-	  <div class="jumbotron speakers-hero">
+	  <div class="jumbotron speakers-hero" style="background-image: url('<?php echo $cover_image; ?>');">
 		<div class="container">	
 			<div class="row">
 				<div class="col-sm-10 col-sm-offset-1 no-padding">
-					<h4>Speakers</h4>
-					<h1 class="homepage-headline">Lorem ipsum dolor sit amet, consectetur adipiscing elit</h1>
+					<h4><?php echo $header_label; ?></h4>
+					<h1 class="homepage-headline"><?php echo $header_copy; ?></h1>
 				</div>
 			</div>
 		</div>	
@@ -30,48 +35,17 @@ get_header(); ?>
 			<div class="row">
 				<div class="col-sm-10 col-sm-offset-1 no-padding">
 					
+				<?php
 					
-					<div class="col-sm-4 speaker-block">
-						<button data-toggle="modal" data-target="#myModal">
-							<img class="speaker-img" src="<?php printthemepath(); ?>/img/speaker-carolyn-rouse.jpg" alt="speaker placeholder">
-							<div class="speaker-block-text">
-								<h5>Carolyn Rouse</h5>
-								<p>Associate Anthropology Professor</p>
-								<p>Princeton University</p>
-							</div>
-						</button>
-					</div>
-					
-					<div class="col-sm-4 speaker-block">
-						<img class="speaker-img" src="<?php printthemepath(); ?>/img/speaker-jay-kaufman.jpg" alt="speaker placeholder">
-						<div class="speaker-block-text">
-							<h5>Jay Kaufman</h5>
-							<p>Faculty of Medicine, Department of Epidemiology & Biostatistics</p>
-							<p>McGill Centre on Population Dynamics</p>
-							<p>McGill University</p>
-						</div>
-					</div>
-					
-					<div class="col-sm-4 speaker-block">
-						<img class="speaker-img" src="<?php printthemepath(); ?>/img/speaker-carolyn-rouse.jpg" alt="speaker placeholder">
-						<div class="speaker-block-text">
-							<h5>Carolyn Rouse</h5>
-							<p>Associate Anthropology Professor</p>
-							<p>Princeton University</p>
-						</div>
-					</div>
-					
-					<div class="col-sm-4 speaker-block">
-						<img class="speaker-img" src="<?php printthemepath(); ?>/img/speaker-jay-kaufman.jpg" alt="speaker placeholder">
-						<div class="speaker-block-text">
-							<h5>Jay Kaufman</h5>
-							<p>Faculty of Medicine, Department of Epidemiology & Biostatistics</p>
-							<p>McGill Centre on Population Dynamics</p>
-							<p>McGill University</p>
+					$args = array( 'post_type' => 'speaker', 'posts_per_page' => 50, 'orderby'=>'title','order'=>'ASC');
+					$loop = new WP_Query( $args );
 
-						</div>
-					</div>
-
+					while ( $loop->have_posts() ) : $loop->the_post();
+						get_template_part('content-speaker', get_post_format());
+					endwhile;				
+				
+				?>
+				
 					
 				</div>
 			</div>

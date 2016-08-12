@@ -48,6 +48,7 @@
 		
 	</head>
 	<body> 
+		
 		<header>
 			<nav class="navbar navbar-default">
 				<div class="container-fluid">
@@ -59,7 +60,9 @@
 					        <span class="icon-bar"></span>
 					        <span class="icon-bar"></span>
 						</button>
-						<a class="navbar-brand" href="#">Logo</a>
+						<a class="navbar-brand" href="<?php echo home_url(); ?>">
+							<img src="<?php printthemepath(); ?>/img/public_classroom_logo.jpg" alt="Penn Public Classroom logo">
+						</a>
 				    </div>
 
 				    <!-- Collect the nav links, forms, and other content for toggling -->
@@ -67,131 +70,50 @@
 				      <ul class="nav navbar-nav navbar-right">
 							<li class="dropdown">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Classes</a>
-								<ul class="dropdown-menu">
-<!-- 									<ul class="list-inline nav-inline-dropdown"> -->
-							            <li class="nav-inline-li">
-							            		<a href="#">
+								
+								<?php
+								$post_objects = get_field('classes', 'option');
+
+								if( $post_objects ): ?>
+								    <ul class="dropdown-menu">
+								    <?php foreach( $post_objects as $post): // variable must be called $post (IMPORTANT) ?>
+								        <?php setup_postdata($post); ?>
+								        
+								         <li class="nav-inline-li">
+							            		<a href="<?php the_permalink($post_object->ID); ?>">
 								            	<div class="nav-img-container">
 									            	<img src="http://cdn8.openculture.com/wp-content/uploads/2013/11/old-books-32.jpg" alt="placeholder image" class="nav-img">
 								            	</div>
 							          		</a>
 								            	<div class="nav-text-container">
-								            	<p>September 14, 2016</p>
-								            	<a href="#">
-								            		<h4 class="nav-class-title">1 Understanding The History of Race and Science</h4>
+								            	<p><?php the_field('date', $post_object->ID); ?></p>
+								            	<a href="<?php the_permalink($post_object->ID); ?>">
+								            		<h4 class="nav-class-title"><?php the_field('title', $post_object->ID); ?></h4>
 								            	</a>
 							            	</a>
 							            	<div class="nav-address-container">
-										        <p>Huntsman Hall</p>
-										        <p>University of Pennsylvania</p>
-										        <p>3730 Walnut Street</p>
-										        <a href="" class="nav-map"><span class="dashed-line-white">view map</span></a>
+										        <p><?php the_field('address_line_1', $post_object->ID); ?></p>
+										        <p><?php the_field('address_line_2', $post_object->ID); ?></p>
+										        <p><?php the_field('address_line_3', $post_object->ID); ?></p>
+										        <a href="<?php the_field('map_link', $post_object->ID); ?>" class="nav-map"><span class="dashed-line-white">view map</span></a>
 										            
-										        <a href="" class="nav-details-btn">View Details</a>
-												<a href="" class="nav-register-btn">Register</a>
+										        <a href="<?php the_permalink($post_object->ID); ?>" class="nav-details-btn">View Details</a>
+												<a href="<?php the_field('registration_link', $post_object->ID); ?>" class="nav-register-btn">Register</a>
 							            	</div>		
 								            	
 							           </li>
-							            <li class="nav-inline-li">
-							            		<a href="#">
-								            	<div class="nav-img-container">
-									            	<img src="http://cdn8.openculture.com/wp-content/uploads/2013/11/old-books-32.jpg" alt="placeholder image" class="nav-img">
-								            	</div>
-							          		</a>
-								            	<div class="nav-text-container">
-								            	<p>September 14, 2016</p>
-								            	<a href="#">
-								            		<h4 class="nav-class-title">2 Understanding The History of Race and Science</h4>
-								            	</a>
-							            	</a>
-							            	<div class="nav-address-container">
-										        <p>Huntsman Hall</p>
-										        <p>University of Pennsylvania</p>
-										        <p>3730 Walnut Street</p>
-										        <a href="" class="nav-map"><span class="dashed-line-white">view map</span></a>
-										            
-										        <a href="" class="nav-details-btn">View Details</a>
-												<a href="" class="nav-register-btn">Register</a>
-							            	</div>		
-								            	
-								            	
-							            </li>
-							            <li class="nav-inline-li">
-							            <a href="#">
-								            	<div class="nav-img-container">
-									            	<img src="http://cdn8.openculture.com/wp-content/uploads/2013/11/old-books-32.jpg" alt="placeholder image" class="nav-img">
-								            	</div>
-							          		</a>
-								            	<div class="nav-text-container">
-								            	<p>September 14, 2016</p>
-								            	<a href="#">
-								            		<h4 class="nav-class-title">3 Understanding The History of Race and Science</h4>
-								            	</a>
-							            	</a>
-							            	<div class="nav-address-container">
-										        <p>Huntsman Hall</p>
-										        <p>University of Pennsylvania</p>
-										        <p>3730 Walnut Street</p>
-										        <a href="" class="nav-map"><span class="dashed-line-white">view map</span></a>
-										            
-										        <a href="" class="nav-details-btn">View Details</a>
-												<a href="" class="nav-register-btn">Register</a>
-							            	</div>		
-								            	
 
-							            </li>
-							            <li class="nav-inline-li">
-							            			<a href="#">
-								            	<div class="nav-img-container">
-									            	<img src="http://cdn8.openculture.com/wp-content/uploads/2013/11/old-books-32.jpg" alt="placeholder image" class="nav-img">
-								            	</div>
-							          		</a>
-								            	<div class="nav-text-container">
-								            	<p>September 14, 2016</p>
-								            	<a href="#">
-								            		<h4 class="nav-class-title">4 Understanding The History of Race and Science</h4>
-								            	</a>
-							            	</a>
-							            	<div class="nav-address-container">
-										        <p>Huntsman Hall</p>
-										        <p>University of Pennsylvania</p>
-										        <p>3730 Walnut Street</p>
-										        <a href="" class="nav-map"><span class="dashed-line-white">view map</span></a>
-										            
-										        <a href="" class="nav-details-btn">View Details</a>
-												<a href="" class="nav-register-btn">Register</a>
-							            	</div>		
-								            	
-							            </li>
-							            
-							            </li>
-							          	<li class="nav-inline-li">
-							          		<a href="#">
-								            	<div class="nav-img-container">
-									            	<img src="http://cdn8.openculture.com/wp-content/uploads/2013/11/old-books-32.jpg" alt="placeholder image" class="nav-img">
-								            	</div>
-							          		</a>
-								            	<div class="nav-text-container">
-								            	<p>September 14, 2016</p>
-								            	<a href="#">
-								            		<h4 class="nav-class-title">5 Understanding The History of Race and Science</h4>
-								            	</a>
-							            	</a>
-							            	<div class="nav-address-container">
-										        <p>Huntsman Hall</p>
-										        <p>University of Pennsylvania</p>
-										        <p>3730 Walnut Street</p>
-										        <a href="" class="nav-map"><span class="dashed-line-white">view map</span></a>
-										            
-										        <a href="" class="nav-details-btn">View Details</a>
-												<a href="" class="nav-register-btn">Register</a>
-							            	</div>		
-							          	</li>
-<!-- 									</ul> -->
-								</ul>
-						  	</li>
-						  	<li><a href="<?php printthemepath(); ?>/about.php">About</a></li>
-						  	<li><a href="#">Speakers</a></li>
+								    <?php endforeach; ?>
+								    </ul>
+								    <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
+								<?php endif; ?>
+
+																							
+																
+								
+							</li>
+						  	<li><a href="<?php the_field('about_page_link', 'option'); ?>"><?php the_field('about_page_label', 'option'); ?></a></li>
+						  	<li><a href="<?php the_field('speakers_page_link', 'option'); ?>"><?php the_field('speakers_page_label', 'option'); ?></a></li>
 				        </ul>
 				    </div><!-- /.navbar-collapse -->
 				
@@ -204,4 +126,5 @@
 				 
 
 		</header>
+		
 		<!-- /header -->

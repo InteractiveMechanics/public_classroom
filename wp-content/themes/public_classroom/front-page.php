@@ -11,18 +11,24 @@ get_header(); ?>
 
 <?php /* The loop */ ?>
 <?php while ( have_posts() ) : the_post();
-	
+	$cover_image = get_field('cover_image');
+	$headline = get_field('headline');
+	$lead_heading = get_field('lead_heading');
+	$lead_body_copy = get_field('lead_body_copy');
+	$quote_image = get_field('quote_image');
+	$quote_copy = get_field('quote_copy');
+	$quote_attribution = get_field('quote_attribution');
+	$sponsor_heading = get_field('sponsor_heading');	
 ?>
-
 
 
 <main>
 	
-	<div class="jumbotron homepage-hero">
+	<div class="jumbotron homepage-hero" style="background-image: url('<?php echo $cover_image; ?>');">
 		<div class="container">	
 			<div class="row">
 				<div class="col-sm-10 col-sm-offset-1 no-padding">
-					<h1 class="homepage-headline">Lorem ipsum dolor sit amet, consectetur adipiscing elit</h1>
+					<h1 class="homepage-headline"><?php echo $headline; ?></h1>
 				</div>
 			</div>
 		</div>	
@@ -39,8 +45,8 @@ get_header(); ?>
 						</div>					
 					</div>
 					<div class="col-sm-5 front-video-container-right">
-						<h3>About the Public Classroom</h3>
-						<p>Race is a sensitive topic in this country. Individual understanding of it is at once emotional, intellectual, and confused. Everyone thinks they are experts on the topic of race, yet few issues are characterized by more contradictory assumptions and myths, as data from the Museum's 2012 focus groups on the topic attested. Yet real conversations on race are intentionally avoided, and that silence intensifies the confusions.</p>
+						<h3><?php echo $lead_heading; ?></h3>
+						<p><?php echo $lead_body_copy; ?></p>
 					</div>
 				</div>
 			</div>
@@ -52,156 +58,63 @@ get_header(); ?>
 			<div class="row">
 				<div class="col-sm-10 col-sm-offset-1 no-padding">
 					<div class="front-class-block-container">
+					
+					
+					 <!-- ACF REPEATER STARTS -->
+			    <?php if ( have_rows('class_module') ): ?>
+			    <?php while ( have_rows('class_module') ): the_row();
+				    $teaser_image = get_sub_field('teaser_image');
+				    $date = get_sub_field('date');
+				    $title = get_sub_field('title');
+				    $teaser_copy = get_sub_field('teaser_copy');
+				    $class_link = get_sub_field('class_link');
+				    
+				?>
+	
 					<div class="class-block">
-							<a href="" class="class-top">
+							<a href="<?php echo $class_link; ?>" class="class-top">
 								<div class="thumb">
-									<img src="<?php printthemepath(); ?>/img/class-featured-placeholder.jpg" alt="placeholder image">
+									<img src="<?php echo $teaser_image; ?>" alt="placeholder image">
 								</div>
 								<div class="class-block-text">
-									<p class="single-class-date"><small>September 21, 2016</small></p>
-									<h5 class="single-class-title">Understanding the History of Race and Science</h5>
+									<p class="single-class-date"><small><?php echo $date; ?></small></p>
+									<h5 class="single-class-title"><?php echo $title; ?></h5>
 								</div>	
 							</a>
 							<div class="class-description-container">
-								<p class="class-description">Race is a modern idea. Ancient societies did not segregate people according to physical differences. Social scientists have argued that race is a social construct without a biological basis, that is rooted instead in the long history of racial inequalities. Speakers include</p>
-								<ul class="speaker-list">
-									<li><a href="">Janet Monge</a></li>
-									<li><a href="">Michael Yudell</a></li>
-									<li><a href="">Michael Weisberg</a></li>
-									<li><a href="">Claudine Cohen</a></li>
-									<li><a href="">Rachel Watkins</a></li>
-									<li><a href="">Monique Scott</a></li>
-								</ul>
-								<div class="front-btn-container">
-									<a href="" class="front-btn">Details</a>
+								<p class="class-description"><?php echo $teaser_copy; ?></p>
+								<span>Speakers include</span>
+								
+								<?php 
+
+								$posts = get_sub_field('speakers');
+								
+								if( $posts ): ?>
+								   <ul class="speaker-list">
+								    <?php foreach( $posts as $post): // variable must be called $post (IMPORTANT) ?>
+								        <?php setup_postdata($post); ?>
+								        <li>
+								            <a href="<?php echo get_sub_field('speaker_link'); ?>#speaker-<?php echo $post->ID; ?>">
+								            <span><?php the_field('name'); ?></span>
+								            </a>
+								        </li>
+								    <?php endforeach; ?>
+								    </ul>
+								    <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
+								<?php endif; ?>
+								
+																							
+									<div class="front-btn-container">
+									<a href="<?php echo $class_link; ?>" class="front-btn">Details</a>
 									<a href="" class="front-btn">Register</a>
 								</div>
 						</div>
 					</div>
 					
-					
-						<div class="class-block">
-							<a href="" class="class-top">
-								<div class="thumb">
-									<img src="<?php printthemepath(); ?>/img/class-featured-placeholder.jpg" alt="placeholder image">
-								</div>
-								<div class="class-block-text">
-									<p class="single-class-date"><small>September 21, 2016</small></p>
-									<h5 class="single-class-title">Understanding the History of Race and Science</h5>
-								</div>	
-							</a>
-								<div class="class-description-container">
-									<p class="class-description">Race is a modern idea. Ancient societies did not segregate people according to physical differences. Social scientists have argued that race is a social construct without a biological basis, that is rooted instead in the long history of racial inequalities. Speakers include</p>
-									<ul class="speaker-list">
-										<li><a href="">Janet Monge</a></li>
-										<li><a href="">Michael Yudell</a></li>
-										<li><a href="">Michael Weisberg</a></li>
-										<li><a href="">Claudine Cohen</a></li>
-										<li><a href="">Rachel Watkins</a></li>
-										<li><a href="">Monique Scott</a></li>
-									</ul>
-									<div class="front-btn-container">
-									<a href="" class="front-btn">Details</a>
-									<a href="" class="front-btn">Register</a>
-									</div>
-								</div>
-								
-							</a>
-						</div>
-					
-					
-					
-						<div class="class-block">
-							<a href="" class="class-top">
-								<div class="thumb">
-									<img src="<?php printthemepath(); ?>/img/class-featured-placeholder.jpg" alt="placeholder image">
-								</div>
-								<div class="class-block-text">
-									<p class="single-class-date"><small>September 21, 2016</small></p>
-									<h5 class="single-class-title">Understanding the History of Race and Science</h5>
-								</div>	
-							</a>
-								<div class="class-description-container">
-									<p class="class-description">Race is a modern idea. Ancient societies did not segregate people according to physical differences. Social scientists have argued that race is a social construct without a biological basis, that is rooted instead in the long history of racial inequalities. Speakers include</p>
-									<ul class="speaker-list">
-										<li><a href="">Janet Monge</a></li>
-										<li><a href="">Michael Yudell</a></li>
-										<li><a href="">Michael Weisberg</a></li>
-										<li><a href="">Claudine Cohen</a></li>
-										<li><a href="">Rachel Watkins</a></li>
-										<li><a href="">Monique Scott</a></li>
-									</ul>
-									<div class="front-btn-container">
-									<a href="" class="front-btn">Details</a>
-									<a href="" class="front-btn">Register</a>
-									</div>
-								</div>
-								
-							</a>
-						</div>
-					
-					
-					
-						<div class="class-block">
-							<a href="" class="class-top">
-								<div class="thumb">
-									<img src="<?php printthemepath(); ?>/img/class-featured-placeholder.jpg" alt="placeholder image">
-								</div>
-								<div class="class-block-text">
-									<p class="single-class-date"><small>September 21, 2016</small></p>
-									<h5 class="single-class-title">Understanding the History of Race and Science</h5>
-								</div>	
-							</a>
-								<div class="class-description-container">
-									<p class="class-description">Race is a modern idea. Ancient societies did not segregate people according to physical differences. Social scientists have argued that race is a social construct without a biological basis, that is rooted instead in the long history of racial inequalities. Speakers include</p>
-									<ul class="speaker-list">
-										<li><a href="">Janet Monge</a></li>
-										<li><a href="">Michael Yudell</a></li>
-										<li><a href="">Michael Weisberg</a></li>
-										<li><a href="">Claudine Cohen</a></li>
-										<li><a href="">Rachel Watkins</a></li>
-										<li><a href="">Monique Scott</a></li>
-									</ul>
-									<div class="front-btn-container">
-									<a href="" class="front-btn">Details</a>
-									<a href="" class="front-btn">Register</a>
-									</div>
-								</div>
-								
-							</a>
-						</div>
-					
-					
-					
-						<div class="class-block">
-							<a href="" class="class-top">
-								<div class="thumb">
-									<img src="<?php printthemepath(); ?>/img/class-featured-placeholder.jpg" alt="placeholder image">
-								</div>
-								<div class="class-block-text">
-									<p class="single-class-date"><small>September 21, 2016</small></p>
-									<h5 class="single-class-title">Understanding the History of Race and Science</h5>
-								</div>	
-							</a>
-								<div class="class-description-container">
-									<p class="class-description">Race is a modern idea. Ancient societies did not segregate people according to physical differences. Social scientists have argued that race is a social construct without a biological basis, that is rooted instead in the long history of racial inequalities. Speakers include</p>
-									<ul class="speaker-list">
-										<li><a href="">Janet Monge</a></li>
-										<li><a href="">Michael Yudell</a></li>
-										<li><a href="">Michael Weisberg</a></li>
-										<li><a href="">Claudine Cohen</a></li>
-										<li><a href="">Rachel Watkins</a></li>
-										<li><a href="">Monique Scott</a></li>
-									</ul>
-									<div class="front-btn-container">
-									<a href="" class="front-btn">Details</a>
-									<a href="" class="front-btn">Register</a>
-									</div>
-								</div>
-								
-							</a>
-						</div>
-					
+				
+				<?php endwhile; ?>
+				<?php endif; ?>
+				<!-- END ACF REPEATER -->					
 					
 					</div>						
 
@@ -212,10 +125,10 @@ get_header(); ?>
 	
 	<section class="mlk-section">
 		<div class="mlk-img-container">
-			<img class="mlk-img" src="<?php printthemepath(); ?>/img/quote-image.jpg" alt="mlk img">
+			<img class="mlk-img" src="<?php echo $quote_image; ?>" alt="mlk img">
 			<blockquote class="mlk-quote">
-				<p>Our lives begin to end the day we become silent about things that matter</p>
-				<footer><cite><h4>Martin Luther King Jr.</h4></cite></footer>
+				<p><?php echo $quote_copy; ?></p>
+				<footer><cite><h4><?php echo $quote_attribution; ?></h4></cite></footer>
 			</blockquote>
 		</div>
 	</section>
@@ -225,33 +138,27 @@ get_header(); ?>
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-10 col-sm-offset-1 no-padding">
-					<h3 class="sponsor-heading">Sponsors &amp; Partners</h3>
+					<h3 class="sponsor-heading"><?php echo $sponsor_heading; ?></h3>
 					
 					<div class="sponsor-container">
 						
+						<?php if ( have_rows('sponsor_block') ): ?>
+					    <?php while ( have_rows('sponsor_block') ): the_row();
+						    $sponsor_link = get_sub_field('sponsor_link');
+						    $sponsor_image = get_sub_field('sponsor_image');
+						?>
+						
 						<div class="sponsor-block">
-							<a href="#">
-								<img src="<?php printthemepath(); ?>/img/sponsor-campaign-for-community@2x.jpg" alt="sponsor logo">
+							<a href="<?php echo $sponsor_link; ?>">
+								<img src="<?php echo $sponsor_image; ?>" alt="sponsor logo">
 							</a>
 						</div>
 						
-						<div class="sponsor-block">
-							<a href="#">
-								<img src="<?php printthemepath(); ?>/img/sponsor-campaign-for-community@2x.jpg" alt="sponsor logo">
-							</a>
-						</div>
+						<?php endwhile; ?>
+						<?php endif; ?>
+						<!-- END ACF REPEATER -->			
 						
-						<div class="sponsor-block">
-							<a href="#">
-								<img src="<?php printthemepath(); ?>/img/sponsor-campaign-for-community@2x.jpg" alt="sponsor logo">
-							</a>
-						</div>
 						
-						<div class="sponsor-block">
-							<a href="#">
-								<img src="<?php printthemepath(); ?>/img/sponsor-campaign-for-community@2x.jpg" alt="sponsor logo">
-							</a>
-						</div>
 						
 					</div>
 				</div>

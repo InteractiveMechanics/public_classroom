@@ -11,15 +11,23 @@ get_header(); ?>
 
   <?php /* The loop */ ?>
   <?php while ( have_posts() ) : the_post();
+	  $cover_image  = get_field('cover_image');
+	  $header_label = get_field('header_label');
+	  $header_copy = get_field('header_copy');
+	  $resources_heading = get_field('resources_heading');
+	  $resources_description = get_field('resources_description');
+	  
+	  
 	  ?>
     
+    
   <main class="about-page">
-	  <div class="jumbotron speakers-hero">
+	  <div class="jumbotron speakers-hero" style="background-image: url('<?php echo $cover_image; ?>');">
 		<div class="container">	
 			<div class="row">
 				<div class="col-sm-10 col-sm-offset-1 no-padding">
-					<h4>Speakers</h4>
-					<h1 class="homepage-headline">Lorem ipsum dolor sit amet, consectetur adipiscing elit</h1>
+					<h4><?php the_field('testing_label'); ?></h4>
+					<h1 class="homepage-headline"><?php echo $header_copy; ?></h1>
 				</div>
 			</div>
 		</div>	
@@ -29,12 +37,7 @@ get_header(); ?>
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-7 col-sm-offset-1 no-padding">
-					<h3>Sample Headline</h3>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dictum eleifend semper. Nam ut hendrerit magna. Sed fringilla, nulla at consequat vulputate, elit tortor ultricies nisi, non interdum nisl turpis a libero. Nulla facilisi. Proin venenatis nulla ultrices tellus pretium blandit. Fusce at dictum magna. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Cras consequat eleifend fringilla. Vestibulum vehicula dui at massa pulvinar iaculis.Pellentesque lacinia arcu a posuere sodales. Fusce risus est, vestibulum id odio bibendum, dignissim auctor felis. Nulla vitae eros pretium, imperdiet enim eu, imperdiet tellus. Praesent hendrerit convallis est, id aliquam dui maximus nec. Etiam non tellus urna. Donec posuere augue semper porta egestas. Integer ut tincidunt risus, ut fermentum nisi.</p>
-					
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dictum eleifend semper. Nam ut hendrerit magna. Sed fringilla, nulla at consequat vulputate, elit tortor ultricies nisi, non interdum nisl turpis a libero. Nulla facilisi. Proin venenatis nulla ultrices tellus pretium blandit. Fusce at dictum magna. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Cras consequat eleifend fringilla. Vestibulum vehicula dui at massa pulvinar iaculis.Pellentesque lacinia arcu a posuere sodales. Fusce risus est, vestibulum id odio bibendum, dignissim auctor felis. Nulla vitae eros pretium, imperdiet enim eu, imperdiet tellus. Praesent hendrerit convallis est, id aliquam dui maximus nec. Etiam non tellus urna. Donec posuere augue semper porta egestas. Integer ut tincidunt risus, ut fermentum nisi.</p>
-					
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dictum eleifend semper. Nam ut hendrerit magna. Sed fringilla, nulla at consequat vulputate, elit tortor ultricies nisi, non interdum nisl turpis a libero. Nulla facilisi. Proin venenatis nulla ultrices tellus pretium blandit. Fusce at dictum magna. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Cras consequat eleifend fringilla. Vestibulum vehicula dui at massa pulvinar iaculis.Pellentesque lacinia arcu a posuere sodales. Fusce risus est, vestibulum id odio bibendum, dignissim auctor felis. Nulla vitae eros pretium, imperdiet enim eu, imperdiet tellus. Praesent hendrerit convallis est, id aliquam dui maximus nec. Etiam non tellus urna. Donec posuere augue semper porta egestas. Integer ut tincidunt risus, ut fermentum nisi.</p>
+					<?php echo the_content(); ?>
 				</div>
 			</div>
 		</div>
@@ -71,36 +74,39 @@ get_header(); ?>
 		</div>
 	</section>
 	
-	<section class="resources-section">
+	<section class="resources-section" id="resources">
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-10 col-sm-offset-1 no-padding">
-					<h3>Resources &amp; Workbook</h3>
+					<h3><?php echo $resources_heading; ?></h3>
 				</div>
 				<div class="col-sm-7 col-sm-offset-1 no-padding">
-					<p class="resources-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur iaculis ipsum arcu, vitae porttitor purus sagittis sit amet. Etiam nec lobortis mauris. Praesent vel elit vel felis pulvinar tincidunt. Vestibulum in orci eu urna auctor sodales. Curabitur nisi mauris, lacinia at felis eget, facilisis auctor dolor. Vestibulum luctus iaculis varius. Vestibulum vestibulum nec ante et venenatis.</p>
+					<p class="resources-description"><?php echo $resources_description; ?></p>
+					
+					<!-- ACF REPEATER STARTS -->
+					    <?php if ( have_rows('resource_block') ): ?>
+					    <?php while ( have_rows('resource_block') ): the_row();
+						    $resource_title = get_sub_field('resource_title');
+						    $resource_file_type = get_sub_field('resource_file_type');
+						    $resource_optional_description = get_sub_field('resource_optional_description');
+						    
+						?>
 					<div class="resources-block">
 						<div class="col-sm-9">
-						<p class="resources-title">Class Workbook </p>
-						<h3 class="file-type">PDF</h3>
-						<p><span class="useful">Useful For:</span> Before Class Starts</p>
-						<p>Suggested Article</p>
+						<p class="resources-title"><?php echo $resource_title; ?></p>
+						<h3 class="file-type"><?php echo $resource_file_type; ?></h3>
+						<p><span class="useful">Useful For:</span><?php echo implode(', ', get_sub_field('resource_useful_for')); ?></p>
+						<p><?php echo $resource_optional_description; ?></p>
 						</div>
 						<div class="col-sm-3 resources-download-btn-container">
 							<a href="" class="resources-download-btn">Download</a>
 						</div>
 					</div>
 					
-					<div class="resources-block">
-						<div class="col-sm-9">
-						<p class="resources-title">Racial Theories in Physical Anthropology: 1850-1918</p>
-						<h3 class="file-type">PDF</h3>
-						<p><span class="useful">Useful For:</span>During Class</p>
-						</div>
-						<div class="col-sm-3 resources-download-btn-container">
-							<a href="" class="resources-download-btn">Download</a>
-						</div>
-					</div>
+					<?php endwhile; ?>
+					<?php endif; ?>
+					<!-- END ACF REPEATER -->
+					
 				</div>
 			</div>
 		</div>
