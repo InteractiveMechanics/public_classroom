@@ -20,6 +20,7 @@
 	height: 100%;
 	margin-top: -175px;
 	padding-left: 0px;
+	display: flex;
 }
 
 .front-video-wrapper {
@@ -46,15 +47,15 @@ $color-button:       #fff;
 $color-button-hover: #f00;
 
 .videoWrapper {
-  position: relative;
+  position: static;
   width: 100%;
-  height: 0;
+  height: initial;
   background-color: #000;
   &43 {
     padding-top: 75%;
   } 
   &169 {
-    padding-top: 56%;
+    padding-top: 100%;
   } 
 }
 .videoIframe {

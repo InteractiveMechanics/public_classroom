@@ -18,7 +18,7 @@
 
 .navbar-default {
 	background-color: $white;
-    border-color: transparent;
+    border: 0px solid transparent;
 }
 
 .navbar-brand {
@@ -41,7 +41,7 @@
    
 }
 .nav > li.dropdown.open .dropdown-menu {
-    display:table; 
+    display:flex; 
     width: 100%; 
     text-align: left; 
     left:0; 
@@ -59,7 +59,7 @@
 	    height: 0px;
 	    position: absolute;
 	    top: 0%;
-	    right: 202px;;
+	    right: 235px;;
 	    content: '';
 	    transform: translate(0%, -100%);
 	    border-left: 0px solid transparent;
@@ -71,7 +71,9 @@
 
 
 .dropdown-menu>li {
-    display: table-cell; // or inline-block
+    display: flex; // or inline-block
+    flex-direction: column;
+    justify-content: space-around;
     @include screen-ltmd {
 	    display: initial;
     }
@@ -89,9 +91,14 @@
 	transition: $transition;
 }
 
+.nav-link {
+	font-size: 1.25em;
+}
+
 .navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover {
 	background-color: transparent;
 	color: $blue;
+
 }
 
 .navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
@@ -132,6 +139,7 @@
 }
 
 .nav-address-container {
+	padding: 10px 20px 0px;
 	p {
 		margin-bottom: 0px;
 	}
@@ -150,7 +158,7 @@
 
 .nav-text-container {
 	padding: 10px 20px 0px;
-	margin-bottom: 2.0em;
+	//margin-bottom: 2.0em;
 	@include screen-ltmd {
 		float: left;
 		margin-left: 1.5em;

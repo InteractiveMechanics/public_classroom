@@ -68,7 +68,7 @@
 				    <!-- Collect the nav links, forms, and other content for toggling -->
 				    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">				      
 				      <ul class="nav navbar-nav navbar-right">
-							<li class="dropdown">
+							<li class="dropdown nav-link">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Classes</a>
 								
 								<?php
@@ -80,23 +80,25 @@
 								        <?php setup_postdata($post); ?>
 								        
 								         <li class="nav-inline-li">
-							            		<a href="<?php the_permalink($post_object->ID); ?>">
+							            	<a href="<?php the_permalink($post_object->ID); ?>">
 								            	<div class="nav-img-container">
 									            	<img src="http://cdn8.openculture.com/wp-content/uploads/2013/11/old-books-32.jpg" alt="placeholder image" class="nav-img">
 								            	</div>
 							          		</a>
-								            	<div class="nav-text-container">
+								            	
+								            <div class="nav-text-container">
 								            	<p><?php the_field('date', $post_object->ID); ?></p>
 								            	<a href="<?php the_permalink($post_object->ID); ?>">
 								            		<h4 class="nav-class-title"><?php the_field('title', $post_object->ID); ?></h4>
 								            	</a>
-							            	</a>
+							            	</div>
 							            	<div class="nav-address-container">
 										        <p><?php the_field('address_line_1', $post_object->ID); ?></p>
 										        <p><?php the_field('address_line_2', $post_object->ID); ?></p>
 										        <p><?php the_field('address_line_3', $post_object->ID); ?></p>
 										        <a href="<?php the_field('map_link', $post_object->ID); ?>" class="nav-map"><span class="dashed-line-white">view map</span></a>
-										            
+							            	</div>
+							            	<div class="nav-text-container">   
 										        <a href="<?php the_permalink($post_object->ID); ?>" class="nav-details-btn">View Details</a>
 												<a href="<?php the_field('registration_link', $post_object->ID); ?>" class="nav-register-btn">Register</a>
 							            	</div>		
@@ -112,8 +114,8 @@
 																
 								
 							</li>
-						  	<li><a href="<?php the_field('about_page_link', 'option'); ?>"><?php the_field('about_page_label', 'option'); ?></a></li>
-						  	<li><a href="<?php the_field('speakers_page_link', 'option'); ?>"><?php the_field('speakers_page_label', 'option'); ?></a></li>
+						  	<li><a class="nav-link" href="<?php the_field('about_page_link', 'option'); ?>"><?php the_field('about_page_label', 'option'); ?></a></li>
+						  	<li><a class="nav-link" href="<?php the_field('speakers_page_link', 'option'); ?>"><?php the_field('speakers_page_label', 'option'); ?></a></li>
 				        </ul>
 				    </div><!-- /.navbar-collapse -->
 				

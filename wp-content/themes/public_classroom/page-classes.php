@@ -26,7 +26,7 @@ get_header(); ?>
     
   <main>
   	 <main class="classes-page">
-	  	<ul class="classes-subnav" data-spy="affix" data-offset-top="0">
+	  	<ul class="classes-subnav" data-spy="affix" data-offset-top="100">
 				<li><a href="#summary">Summary</a></li>
 				<li><a href="#videos">Videos</a></li>
 				<li><a href="#speakers">Speakers &amp; Moderator</a></li>

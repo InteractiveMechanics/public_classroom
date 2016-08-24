@@ -40,7 +40,7 @@ get_header(); ?>
 				<div class="col-sm-10 col-sm-offset-1 front-video-container">
 					<div class="col-sm-7 no-left-padding">
 						 <div class="videoWrapper videoWrapper169 js-videoWrapper">
-							<iframe class="videoIframe js-videoIframe" src="https://player.vimeo.com/video/72716406?title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+							<iframe class="videoIframe js-videoIframe" src="https://player.vimeo.com/video/173960064?title=0&byline=0&portrait=0" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 							<button class="videoPoster js-videoPoster"><span class="sr-only">Watch Course Preview</span></button>
 						</div>					
 					</div>
