@@ -32,6 +32,8 @@
 	}
 }
 
+
+
 .navbar-right {
 	margin-top: 25px;
 }
@@ -51,6 +53,7 @@
     background-color: $blue;
     color: #ffffff;
     z-index: 9999;
+    padding-top: 12px;
     @include screen-ltmd {
 	    text-align: left;
     }
@@ -73,7 +76,8 @@
 .dropdown-menu>li {
     display: flex; // or inline-block
     flex-direction: column;
-    justify-content: space-around;
+    //justify-content: space-around;
+    width: 20%;
     @include screen-ltmd {
 	    display: initial;
     }
@@ -101,12 +105,38 @@
 
 }
 
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+	background-color: transparent;
+	color: $blue;
+}
+
+
+
+.dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover {
+	background-color: initial;
+}
+
 .navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
 	color: $blue;
 	@include screen-xs {
 		color: $offwhite;
 	}
 }
+
+.dropdown-menu {
+	border: none;
+	border-radius: 0px;
+	box-shadow: none;
+}
+
+
+.nav-img-link {
+	transition: $transition;
+	&:hover {
+		opacity: 0.60	;
+	}
+}
+
 
 
 .nav-img-container {
@@ -140,8 +170,11 @@
 
 .nav-address-container {
 	padding: 10px 20px 0px;
+	
 	p {
 		margin-bottom: 0px;
+		line-height: 1.4;
+		font-size: 1.1em;
 	}
 }
 
@@ -158,6 +191,7 @@
 
 .nav-text-container {
 	padding: 10px 20px 0px;
+	flex: 1;
 	//margin-bottom: 2.0em;
 	@include screen-ltmd {
 		float: left;
@@ -170,6 +204,11 @@
 	@include screen-xs {
 		width: 50%;
 	}
+}
+
+.nav-dropdown-buttons {
+	align-self: flex-end;
+	width: 100%;
 }
 
 .nav-details-btn {

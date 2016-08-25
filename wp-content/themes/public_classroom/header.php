@@ -34,6 +34,8 @@
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/css/bootstrap-select.min.css">
 		<link rel="stylesheet" href="<?php printThemePath(); ?>/style.css">
 		<link rel="stylesheet" href="<?php printThemePath(); ?>/css/main.css">
+		<link rel="stylesheet" href="<?php printThemePath(); ?>/css/animate.css">
+
 		
 		
 		<!-- favicons and icons go here-->
@@ -69,20 +71,20 @@
 				    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">				      
 				      <ul class="nav navbar-nav navbar-right">
 							<li class="dropdown nav-link">
-								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Classes</a>
+								<a href="#" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">Classes</a>
 								
 								<?php
 								$post_objects = get_field('classes', 'option');
 
 								if( $post_objects ): ?>
-								    <ul class="dropdown-menu">
+								    <ul class="dropdown-menu animated">
 								    <?php foreach( $post_objects as $post): // variable must be called $post (IMPORTANT) ?>
 								        <?php setup_postdata($post); ?>
 								        
 								         <li class="nav-inline-li">
-							            	<a href="<?php the_permalink($post_object->ID); ?>">
+							            	<a href="<?php the_permalink($post_object->ID); ?>" class="nav-img-link">
 								            	<div class="nav-img-container">
-									            	<img src="http://cdn8.openculture.com/wp-content/uploads/2013/11/old-books-32.jpg" alt="placeholder image" class="nav-img">
+									            	<img src="<?php the_field('cover_image', $post_object->ID); ?>" alt="placeholder image" class="nav-img">
 								            	</div>
 							          		</a>
 								            	
@@ -98,7 +100,7 @@
 										        <p><?php the_field('address_line_3', $post_object->ID); ?></p>
 										        <a href="<?php the_field('map_link', $post_object->ID); ?>" class="nav-map"><span class="dashed-line-white">view map</span></a>
 							            	</div>
-							            	<div class="nav-text-container">   
+							            	<div class="nav-text-container nav-dropdown-buttons">   
 										        <a href="<?php the_permalink($post_object->ID); ?>" class="nav-details-btn">View Details</a>
 												<a href="<?php the_field('registration_link', $post_object->ID); ?>" class="nav-register-btn">Register</a>
 							            	</div>		
@@ -114,8 +116,8 @@
 																
 								
 							</li>
-						  	<li><a class="nav-link" href="<?php the_field('about_page_link', 'option'); ?>"><?php the_field('about_page_label', 'option'); ?></a></li>
-						  	<li><a class="nav-link" href="<?php the_field('speakers_page_link', 'option'); ?>"><?php the_field('speakers_page_label', 'option'); ?></a></li>
+						  	<li><a class="nav-link no-dropdown" href="<?php the_field('about_page_link', 'option'); ?>"><?php the_field('about_page_label', 'option'); ?></a></li>
+						  	<li><a class="nav-link no-dropdown" href="<?php the_field('speakers_page_link', 'option'); ?>"><?php the_field('speakers_page_label', 'option'); ?></a></li>
 				        </ul>
 				    </div><!-- /.navbar-collapse -->
 				

@@ -32,7 +32,43 @@ function videoStop($wrapper) {
   $iframe.attr('src','');
 }
 
+$('li.dropdown a').on('click', function (event) {
+    $(this).parent().toggleClass('open');
+    if ($('.dropdown-menu').hasClass('fadeOut')) {
+	    $('.dropdown-menu').removeClass('fadeOut').addClass('fadeInDown');
+	} else if (!$('.dropdown-menu').hasClass('fadeInDown')) {
+		$('.dropdown-menu').addClass('fadeInDown');
+	} else {
+		$('.dropdown-menu').removeClass('fadeInDown').addClass('fadeOut');
+	}
+	 
+});
 
+
+
+$('body').on('click', function (e) {
+	    if (!$('li.dropdown').is(e.target) 
+        && $('li.dropdown').has(e.target).length === 0 
+        && $('.open').has(e.target).length === 0
+    ) {
+        $('li.dropdown').removeClass('open');
+        $('.dropdown-menu').removeClass('fadeInDown').addClass('fadeOut');
+    }
+});
+
+
+var url = window.location;
+// Will only work if string in href matches with location
+$('ul.nav a[href="'+ url +'"]').parent().addClass('active');
+
+// Will also work for relative and absolute hrefs
+$('ul.nav a').filter(function() {
+    return this.href == url;
+}).parent().addClass('active');
+
+$('ul.nav a').filter(function() {
+    return this.href == url;
+}).parent().parent().parent().addClass('active');
 
 
 $(document).ready(function(){

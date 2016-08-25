@@ -23,7 +23,7 @@ function create_custom_post_types() {
             'public' => true,
             'map_meta_cap'=> true,
             'has_archive' => true,
-            'rewrite' => array( 'slug' => 'speakers' ),
+            'rewrite' => array( 'slug' => 'speaker' ),
             'supports' => array( 'title', 'editor', 'comments', 'author', 'custom-fields', 'thumbnail', 'custom-fields', 'post-templates'),
         )
     );

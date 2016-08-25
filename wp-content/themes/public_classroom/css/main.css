@@ -260,7 +260,8 @@ a {
   margin-top: 10px;
   background-color: #134984;
   color: #ffffff;
-  z-index: 9999; }
+  z-index: 9999;
+  padding-top: 12px; }
   @media (max-width: 991px) {
     .nav > li.dropdown.open .dropdown-menu {
       text-align: left; } }
@@ -279,7 +280,7 @@ a {
 .dropdown-menu > li {
   display: flex;
   flex-direction: column;
-  justify-content: space-around; }
+  width: 20%; }
   @media (max-width: 991px) {
     .dropdown-menu > li {
       display: initial; } }
@@ -300,11 +301,28 @@ a {
   background-color: transparent;
   color: #134984; }
 
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover {
+  background-color: transparent;
+  color: #134984; }
+
+.dropdown-menu > li > a:focus, .dropdown-menu > li > a:hover {
+  background-color: initial; }
+
 .navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:hover {
   color: #134984; }
   @media (max-width: 767px) {
     .navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:hover {
       color: #f1f1f2; } }
+
+.dropdown-menu {
+  border: none;
+  border-radius: 0px;
+  box-shadow: none; }
+
+.nav-img-link {
+  transition: all 0.5s ease-in-out; }
+  .nav-img-link:hover {
+    opacity: 0.6; }
 
 .nav-img-container {
   height: 85px;
@@ -332,7 +350,9 @@ a {
 .nav-address-container {
   padding: 10px 20px 0px; }
   .nav-address-container p {
-    margin-bottom: 0px; }
+    margin-bottom: 0px;
+    line-height: 1.4;
+    font-size: 1.1em; }
 
 .nav-map {
   display: block;
@@ -342,7 +362,8 @@ a {
     color: #f1f1f2; }
 
 .nav-text-container {
-  padding: 10px 20px 0px; }
+  padding: 10px 20px 0px;
+  flex: 1; }
   @media (max-width: 991px) {
     .nav-text-container {
       float: left;
@@ -354,6 +375,10 @@ a {
   @media (max-width: 767px) {
     .nav-text-container {
       width: 50%; } }
+
+.nav-dropdown-buttons {
+  align-self: flex-end;
+  width: 100%; }
 
 .nav-details-btn {
   margin: 10px 0px;
@@ -494,7 +519,7 @@ footer {
 
 .modal {
   padding-right: 0px;
-  top: 20%;
+  padding-top: 10%;
   left: 0px;
   right: 40px; }
 
