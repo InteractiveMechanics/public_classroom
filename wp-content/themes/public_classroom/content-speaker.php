@@ -19,9 +19,9 @@
 		<img class="speaker-img" src="<?php echo $speaker_image; ?>">
 			
 			<div class="speaker-block-text">
-				<h5><?php echo $name; ?></h5>
-					<p><?php echo $primary_affiliation_title; ?></p>
-					<p><?php echo $primary_affiliation_org; ?></p>
+				<h4><?php echo $name; ?></h5>
+<!-- 					<p><?php echo $primary_affiliation_title; ?></p> -->
+<!-- 					<p><?php echo $primary_affiliation_org; ?></p> -->
 			</div>
 	</button>
 </div>
@@ -45,7 +45,7 @@
 					<div class="modal-dialog" role="document">
 						<div class="modal-content">
 							<div class="modal-header">
-								<h4 class="modal-title" id="myModalLabel">About the Speaker</h4>
+								<h4 class="modal-title" id="myModalLabel"><?php echo $name; ?></h4>
 							    
 							    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 							        	<span aria-hidden="true">
@@ -67,13 +67,15 @@
 							<div class="modal-body">
 								<p><?php echo $short_bio; ?></p>
 								     
+								   <?php if ( have_rows('external_resources') ): ?>
+										 <?php while ( have_rows('external_resources') ): the_row(); ?>
+									    
+     
+								     
 								<h4>External Resources</h4>
 								    
 								    <ul>
-									     <?php if ( have_rows('external_resources') ): ?>
-										 <?php while ( have_rows('external_resources') ): the_row(); ?>
-									    
-									    
+									   									    
 									    
 									    <li><a href="<?php echo get_sub_field('external_resource_link'); ?>"class="dashed-line-white"><?php echo get_sub_field('external_resource_label'); ?></a></li>
 									    

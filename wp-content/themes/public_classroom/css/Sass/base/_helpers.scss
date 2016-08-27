@@ -9,6 +9,10 @@ a {
 	font-family: $gotham-bold;
 }
 
+:focus {
+	outline: none;
+}
+
 .underline {
 	text-decoration: underline;
 }
@@ -38,6 +42,14 @@ a {
 
 .section-border {
 	border-bottom: 1px solid $gray;
+}
+
+.extend-p {
+	@extend p;
+}
+
+.text-link {
+	font-weight: 700;
 }
 
 /** WP WYSIWYG editor styles **/

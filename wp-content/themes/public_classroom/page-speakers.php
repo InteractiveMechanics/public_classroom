@@ -34,6 +34,7 @@ get_header(); ?>
 		 <div class="container">
 			<div class="row">
 				<div class="col-sm-10 col-sm-offset-1 no-padding">
+					<div class="classes-speakers-wrapper">
 					
 				<?php
 					
@@ -46,7 +47,7 @@ get_header(); ?>
 				
 				?>
 				
-					
+					</div>
 				</div>
 			</div>
 		 </div>

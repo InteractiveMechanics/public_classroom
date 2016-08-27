@@ -104,6 +104,7 @@ get_header(); ?>
 						    $resource_title = get_sub_field('resource_title');
 						    $resource_file_type = get_sub_field('resource_file_type');
 						    $resource_optional_description = get_sub_field('resource_optional_description');
+						    $resource_file = get_sub_field('resource_file');
 						    
 						?>
 					<div class="resources-block">
@@ -114,7 +115,7 @@ get_header(); ?>
 						<p><?php echo $resource_optional_description; ?></p>
 						</div>
 						<div class="col-sm-3 resources-download-btn-container">
-							<a href="" class="resources-download-btn">Download</a>
+							<a href="<?php echo $resource_file; ?>" class="resources-download-btn" target="_blank">Download</a>
 						</div>
 					</div>
 					

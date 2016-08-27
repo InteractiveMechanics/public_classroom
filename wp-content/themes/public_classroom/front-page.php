@@ -82,8 +82,9 @@ get_header(); ?>
 								</div>	
 							</a>
 							<div class="class-description-container">
-								<p class="class-description"><?php echo $teaser_copy; ?></p>
-								<span>Speakers include</span>
+								<div class="class-description-wrapper">
+								<p class="class-description"><?php echo $teaser_copy; ?>
+								<span class="extend-p">Speakers include</span></p>
 								
 								<?php 
 
@@ -95,20 +96,22 @@ get_header(); ?>
 								        <?php setup_postdata($post); ?>
 								        <li>
 								            <a href="<?php echo get_sub_field('speaker_link'); ?>#speaker-<?php echo $post->ID; ?>">
-								            <span><?php the_field('name'); ?></span>
+								            <span class="speaker-name"><?php the_field('name'); ?></span>
 								            </a>
 								        </li>
 								    <?php endforeach; ?>
 								    </ul>
 								    <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
 								<?php endif; ?>
-								
-																							
-									<div class="front-btn-container">
-									<a href="<?php echo $class_link; ?>" class="front-btn">Details</a>
-									<a href="" class="front-btn">Register</a>
 								</div>
-						</div>
+								</div>
+								<div class="class-button-container">															
+									<div class="front-btn-container">
+										<a href="<?php echo $class_link; ?>" class="front-btn">Details</a>
+										<a href="" class="front-btn">Register</a>
+									</div>
+								</div>
+						
 					</div>
 					
 				

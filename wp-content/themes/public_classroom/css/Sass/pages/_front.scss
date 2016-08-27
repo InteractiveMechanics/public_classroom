@@ -153,6 +153,9 @@ $color-button-hover: #f00;
     width: 30.33%;
     margin: 20px 1.5%;
     background: $white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 
@@ -167,6 +170,8 @@ $color-button-hover: #f00;
 		height: auto;
     }
 }
+
+
 
 
 
@@ -196,40 +201,52 @@ $color-button-hover: #f00;
 
 .speaker-list {
 	padding-left: 0px;
+	display: inline;
 	li {
 		&:last-of-type {
-			a {
-				&:before {
+			&:before {
 					content: ' and ';
 					font-family: $scalasans-regular;
-					border-bottom: 1px dotted transparent;
+					//border-bottom: 1px dotted transparent;
 				}
 				&:after {
 					content: '. ';
+					border-bottom: none;
 				}
-			}
 		}
 	display: inline-block;
-		a {
-			font-family: $scalasans-bold;
-			color: $black;
-			border-bottom: 1px dotted $black;
-			&:after {
+	&:after {
 				content: ", ";
+				border-bottom: none;
 				
 			}
+
+		a {
+			font-family: $scalasans-bold;
+			font-size: 1.25em;
+			color: $black;
+			border-bottom: 1px dotted $black;
 			
 		}
 	}
 }
 
-.class-description {
-	display: inline;
+.speaker-name {
+	margin-right: -3px;
 }
+
 
 .class-description-container {
 	background-color: $white;
 	padding: 20px;
+	flex: 1;
+	p {
+		display: inline;
+	}
+}
+
+.class-button-container {
+	padding: 0px 20px 20px;
 }
 
 .front-btn-container {

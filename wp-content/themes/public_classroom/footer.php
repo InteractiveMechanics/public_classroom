@@ -1,15 +1,20 @@
 		<footer>
 			<div class="container">
 				<div class="row">
+					<div class="footer-logo-wrapper">
+					<a href="<?php echo the_field('footer_logo_link', 'option'); ?>" target="_blank" class="footer-logo-link">
 					<img src="<?php printthemepath(); ?>/img/footer-logo@2x.jpg" alt="Penn Museum logo">
+					</a>
+					</div>
+						<ul class="address-block">
 <!--
-					<ul class="address-block">
 						<li class="bold">The Public Classroom</li>
 						<li>University of Pennsylvania</li>
-						<li>Philadelphia, PA 19104</li>
-						<li>(215)898-5000</li>
-					</ul>
 -->
+						<li>3260 South Street Philadelphia, PA 19104</li>
+						<li>&copy; Penn Museum 2016</li>
+<!-- 						<li>(215)898-5000</li> -->
+					</ul>
 				</div>
 				<div class="row">
 					<ul class="footer-links">

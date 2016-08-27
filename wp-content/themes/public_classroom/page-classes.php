@@ -24,15 +24,17 @@ get_header(); ?>
 	  $optional_description = get_field('optional_description');
   ?>
     
-  <main>
+  
   	 <main class="classes-page">
-	  	<ul class="classes-subnav" data-spy="affix" data-offset-top="100">
+	  	<div id="spyOnThis" data-spy="scroll" data-target=".classes-subnav">
+	  	<ul class="classes-subnav nav" data-spy="affix" data-offset-top="100">
 				<li><a href="#summary">Summary</a></li>
 				<li><a href="#videos">Videos</a></li>
 				<li><a href="#speakers">Speakers &amp; Moderator</a></li>
 				<li><a href="#collection">Collection Workshop</a></li>
 				<li><a href="#resources">Resources &amp; Workbook</a></li>
 			</ul>
+	  	</div>
  
 	  	<div class="jumbotron speakers-hero" style="background-image: url('<?php echo $cover_image; ?>');">
 		<div class="container">	
@@ -46,7 +48,7 @@ get_header(); ?>
 		</div>	
 	 </div>
 
-
+	 
 	 <section id="summary">
 		<div class="container">
 			<div class="row">
@@ -253,6 +255,7 @@ get_header(); ?>
 						    $resource_title = get_sub_field('resource_title');
 						    $resource_file_type = get_sub_field('resource_file_type');
 						    $resource_optional_description = get_sub_field('resource_optional_description');
+						    $resource_file = get_sub_field('resource_file');
 						    
 						?>
 					<div class="resources-block">
@@ -263,7 +266,7 @@ get_header(); ?>
 						<p><?php echo $resource_optional_description; ?></p>
 						</div>
 						<div class="col-sm-3 resources-download-btn-container">
-							<a href="" class="resources-download-btn">Download</a>
+							<a href="<?php echo $resource_file; ?>" class="resources-download-btn" target="_blank">Download</a>
 						</div>
 					</div>
 					
@@ -278,7 +281,7 @@ get_header(); ?>
 			</div>
 		</div>
 	</section>
-
+	
 
 
 

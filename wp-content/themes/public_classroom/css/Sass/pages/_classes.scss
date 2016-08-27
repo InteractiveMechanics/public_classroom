@@ -1,11 +1,26 @@
 .classes-page {
 	background-color: $white;
+
+	.nav>li>a:focus, .nav>li>a:hover {
+		background-color: transparent;
+	}
+	
+	.nav>li.active {
+		a {
+			opacity: 1.0;
+		}
+	}
+}
+
+body {
+	position: relative;
+
 }
 
 .classes-subnav {
 	background-color: rgba(15, 15, 15, 0.85);
-	padding: 10px 0px 10px 80px;
-	position: fixed;
+	padding: 5px 0px 5px 80px;
+	position: absolute;
 	width: calc(100% - 50px);
 	z-index: 9990;
 	li {
@@ -24,6 +39,7 @@
 			}
 		}
 	}
+	
 }
 
 .no-top-padding {
@@ -32,6 +48,7 @@
 
 .affix {
 		top: 0px;
+		position: fixed;
 	}
 	
 .classes-speaker-section {

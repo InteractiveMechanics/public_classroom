@@ -23,10 +23,14 @@
 	margin-bottom: -6px;
 }
 
+.slick-slider {
+	margin-bottom: 0px;
+}
+
 .slick-dots {
 	position: absolute;
 	bottom: 8px;
-	right: 354px;
+	right: 347px;
 	display: block;
 	width: initial;
 	padding: 0;
@@ -51,7 +55,7 @@
 
 
 .about-video-container-right {
-	padding: 15px;
+	padding: 15px 22px;
 	background-color: $white;
 	margin-left: -2px;
 	height: 320px;
@@ -84,28 +88,31 @@
 }
 
 .resources-block {
-	background-color: $gray;
-	padding: 30px;
-	margin-bottom: 15px;
-	overflow: auto;
-	display: flex;
-	p {
-		margin-top: 5px;
-	}
+	background-color: $gray;	
 }
 
 .resources-block-quiz {
 	background-color: $blue;
 	color: $white;
-	padding: 30px;
+}
+
+
+.resources-block, .resources-block-quiz {
+	padding: 20px;
 	margin-bottom: 15px;
 	overflow: auto;
 	display: flex;
 	p {
-		margin-top: 5px;
+		margin: 0px;
+		font-size: 1.15em;
+		line-height: 1.4;
+		&:last-of-type {
+			font-style: italic;
+		}
 	}
 
 }
+
 
 .resources-quiz-download-btn {
 	@include big-button($white, $blue);
@@ -120,9 +127,9 @@
 }
 
 .resources-title {
-	font-size: 1.5em;
-	padding-right: 10px;
-	display: inline;
+	font-size: 1.60em !important;
+	padding: 0px 10px 5px 0px;
+	display: inline-block;
 }
 
 .resources-download-btn-container {

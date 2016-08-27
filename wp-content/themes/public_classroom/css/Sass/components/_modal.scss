@@ -7,16 +7,20 @@
 }
 
 .modal-backdrop {
-   background-color: $white;
+   background-color: $silver;
+   opacity: 0.75 !important; 
 }
 
 
 .modal-content {
 	background-color: $blue;
 	border-radius: 0px;
+	border: none;
 	box-shadow: none;
 	color: $white;
+	height: 70vh;
 	margin: 0px;
+	overflow-y: auto;
 	h4 {
 		color: $white;		
 	}
