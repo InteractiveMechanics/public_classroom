@@ -252,6 +252,7 @@ $color-button-hover: #f00;
 .front-btn-container {
 	display: flex;
 	justify-content: space-between;
+	
 }
 
 
@@ -264,6 +265,9 @@ $color-button-hover: #f00;
 	text-align: center;
 	//border: 1px solid $blue;
 	@include big-button($blue, $white);
+	&:only-child {
+		width: 100%;
+	}
 }
 
 .mlk-section {
@@ -320,6 +324,13 @@ $color-button-hover: #f00;
 	    height: auto;
     }
 }
+
+.pew-credit {
+	color: $silver;
+	text-align: center;
+    padding-top: 10px;
+}
+
  
  
  

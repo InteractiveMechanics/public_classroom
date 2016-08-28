@@ -102,7 +102,10 @@
 							            	</div>
 							            	<div class="nav-text-container nav-dropdown-buttons">   
 										        <a href="<?php the_permalink($post_object->ID); ?>" class="nav-details-btn">View Details</a>
+										        
+										        <?php if( get_field('registration_link', $post_object->ID) ): ?>
 												<a href="<?php the_field('registration_link', $post_object->ID); ?>" class="nav-register-btn">Register</a>
+												<?php endif; ?>
 							            	</div>		
 								            	
 							           </li>

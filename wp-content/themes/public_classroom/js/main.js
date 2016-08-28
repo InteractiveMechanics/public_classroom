@@ -52,6 +52,7 @@ $('body').scrollspy();
 
 
 
+
 $('li.dropdown a').on('click', function (event) {
     $(this).parent().toggleClass('open');
     if ($('.dropdown-menu').hasClass('fadeOut')) {

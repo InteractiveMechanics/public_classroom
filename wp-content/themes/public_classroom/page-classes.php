@@ -13,6 +13,7 @@ get_header(); ?>
   <?php while ( have_posts() ) : the_post();
 	  $cover_image = get_field('cover_image');
 	  $date = get_field('date');
+	  $class_time = get_field('class_time');
 	  $title = get_field('title');
 	  $focus_question = get_field('focus_question');
 	  $class_description = get_field('class_description');
@@ -54,11 +55,31 @@ get_header(); ?>
 			<div class="row">
 				<div class="col-sm-7 col-sm-offset-1 no-padding">
 					<h4><span><img src="<?php printthemepath(); ?>/img/icon-bubble.svg" alt="quote bubble icon"></span> Focus Question</h4>
-					
+						
 					<p class="lead"><?php echo $focus_question?></p>
+				</div>
+				<div class="col-sm-7 col-sm-offset-1 no-padding">
+
 					
 					<?php echo $class_description; ?>
 					
+				</div>
+				<div class="col-sm-3 col-sm-offset-1 classes-sidebar">
+					<h4>When</h4>
+					<p><?php echo $date; ?>  
+					
+						<?php if( get_field('class_time')): ?>
+						 	at <?php echo $class_time; ?>
+						<?php endif; ?>
+					</p>
+					
+					<h4>Where</h4>
+					<p><?php echo get_field('address_line_1'); ?></p>
+					<p><?php echo get_field('address_line_2'); ?></p>
+					<p><?php echo get_field('address_line_3'); ?></p> 
+					<p><span class="location-city"><?php echo get_field('city'); ?></span>, <?php echo get_field('state'); ?>  <?php echo get_field('zip_code'); ?> </p>
+					
+										
 				</div>
 			</div>
 		</div>
@@ -132,7 +153,7 @@ get_header(); ?>
 								setup_postdata( $post ); 
 							
 								?>
-							    <span class="moderator-wrapper"><?php get_template_part('content-speaker',  get_post_format()) ?></span>
+							    <?php get_template_part('content-speaker',  get_post_format()) ?>
 							    <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
 						<?php endif; ?>
 													
@@ -167,7 +188,8 @@ get_header(); ?>
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-10 col-sm-offset-1 no-padding">
-			<div class="section-border"></div>
+				<div class="section-border"></div>
+			</div>
 		</div>
 	</div>
 	
@@ -176,6 +198,8 @@ get_header(); ?>
 			<div class="row">
 				
 				<div class="col-sm-10 col-sm-offset-1 no-padding">
+					
+
 					<h3>Collection Workshop</h3>
 				</div>
 				
@@ -185,29 +209,26 @@ get_header(); ?>
 				
 				
 				<div class="col-sm-10 col-sm-offset-1 no-padding">
-					<div class="classes-collection-wrapper">
-					
-						<!-- ACF REPEATER STARTS -->
-					    <?php if ( have_rows('collection_object') ): ?>
-					    <?php while ( have_rows('collection_object') ): the_row();
-						    $object_image = get_sub_field('object_image');
-						    $object_title = get_sub_field('object_title');
-						    $object_label = get_sub_field('object_label');
-						?>
+					<div class="classes-collection-wrapper">				
 						
-						<div class="col-sm-4 speaker-block">
-							<img class="speaker-img" src="<?php echo $object_image; ?>">
-							
-							<div class="speaker-block-text">
-								<h5><?php echo $object_title; ?></h5>
-								<p><?php echo $object_label; ?></p>
-							</div>
-							
-						</div>
+						<?php 
+
+									$post_objects = get_field('collection_object');
+
+									if( $post_objects ): ?>
+								    
+								    
+								    
+									    
+									<?php foreach( $post_objects as $post): ?>
+									 <?php setup_postdata($post); ?>
+										<?php get_template_part('content-collection_object',  get_post_format()) ?>
+								    <?php endforeach; ?>
+								    
+								    <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
+									<?php endif; ?>    
 					
-						<?php endwhile; ?>
-						<?php endif; ?>
-						<!-- END ACF REPEATER -->	
+							
 							
 					</div>
 				</div>
@@ -222,7 +243,8 @@ get_header(); ?>
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-10 col-sm-offset-1 no-padding">
-			<div class="section-border"></div>
+				<div class="section-border"></div>
+			</div>
 		</div>
 	</div>
 	

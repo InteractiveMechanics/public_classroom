@@ -13,6 +13,39 @@ register_nav_menus( array(
 require_once('wp_bootstrap_navwalker.php');
 
 
+add_filter( 'acf/fields/wysiwyg/toolbars' , 'my_toolbars'  );
+function my_toolbars( $toolbars )
+{
+	// Uncomment to view format of $toolbars
+	/*
+	echo '< pre >';
+		print_r($toolbars);
+	echo '< /pre >';
+	die;
+	*/
+
+	// Add a new toolbar called "Very Simple"
+	// - this toolbar has only 1 row of buttons
+	$toolbars['Very Simple' ] = array();
+	$toolbars['Very Simple' ][1] = array('bold' , 'italic' , 'underline' );
+
+	// Edit the "Full" toolbar and remove 'code'
+	// - delet from array code from http://stackoverflow.com/questions/7225070/php-array-delete-by-value-not-key
+	if( ($key = array_search('code' , $toolbars['Full' ][2])) !== false )
+	{
+	    unset( $toolbars['Full' ][2][$key] );
+	}
+
+	// remove the 'Basic' toolbar completely
+	unset( $toolbars['Basic' ] );
+
+	// return $toolbars - IMPORTANT!
+	return $toolbars;
+}
+
+
+
+
 function create_custom_post_types() {
     register_post_type( 'speaker',
         array(
@@ -24,6 +57,20 @@ function create_custom_post_types() {
             'map_meta_cap'=> true,
             'has_archive' => true,
             'rewrite' => array( 'slug' => 'speaker' ),
+            'supports' => array( 'title', 'editor', 'comments', 'author', 'custom-fields', 'thumbnail', 'custom-fields', 'post-templates'),
+        )
+    );
+    
+    register_post_type( 'collection_object',
+        array(
+            'labels' => array(
+                'name' => __( 'Collection Object' ),
+                'singular_name' => __( 'Collection Object' )
+            ),
+            'public' => true,
+            'map_meta_cap'=> true,
+            'has_archive' => true,
+            'rewrite' => array( 'slug' => 'collection_object' ),
             'supports' => array( 'title', 'editor', 'comments', 'author', 'custom-fields', 'thumbnail', 'custom-fields', 'post-templates'),
         )
     );

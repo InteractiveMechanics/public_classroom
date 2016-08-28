@@ -38,6 +38,30 @@
 	}
 }
 
+.collection_object-block {
+	margin-bottom: 30px;
+	height: 300px;
+	position: relative;
+	transition: $transition;
+	h4 {
+		text-transform: uppercase;
+		color: $white;
+		padding: 0px 20px 20px 20px;
+	}
+	&:hover, &:active, &:focus:active {
+		.collection_object-overlay {
+			display: none;
+			z-index: 0;
+		}
+		.collection_object-modal-btn {
+			z-index: 999;
+		}
+		.collection_object-img {
+			opacity: 1.0;
+		}
+	}
+}
+
 .moderator {
 	&:after {
 		content: 'moderator';
@@ -46,10 +70,10 @@
 		left: 35px;
 		background-color: $red;
 		color: $white;
-		padding: 3px 12px;
+		padding: 8px 12px;
 		text-transform: uppercase;
 		font-family: $gotham-bold;
-		font-size: 1em;
+		font-size: 0.9em;
 	}
 }
 
@@ -57,6 +81,15 @@
 .speaker-img {
 	width: auto;
 	height: 300px;
+}
+
+.collection_object-img {
+	width: auto;
+	height: 300px;
+	opacity: 0.50;
+	&:hover, &:actve, &:focus {
+		opacity: 1.0;
+	}
 }
 
 

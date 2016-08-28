@@ -18,7 +18,8 @@ get_header(); ?>
 	$quote_image = get_field('quote_image');
 	$quote_copy = get_field('quote_copy');
 	$quote_attribution = get_field('quote_attribution');
-	$sponsor_heading = get_field('sponsor_heading');	
+	$sponsor_heading = get_field('sponsor_heading');
+	$pew_credit = get_field('pew_credit');	
 ?>
 
 
@@ -68,6 +69,7 @@ get_header(); ?>
 				    $title = get_sub_field('title');
 				    $teaser_copy = get_sub_field('teaser_copy');
 				    $class_link = get_sub_field('class_link');
+				    $registration_link = get_sub_field('registration_link');
 				    
 				?>
 	
@@ -108,7 +110,10 @@ get_header(); ?>
 								<div class="class-button-container">															
 									<div class="front-btn-container">
 										<a href="<?php echo $class_link; ?>" class="front-btn">Details</a>
-										<a href="" class="front-btn">Register</a>
+										
+										<?php if( get_sub_field('registration_link') ): ?>
+										<a href="<?php echo $registration_link; ?>" class="front-btn">Register</a>
+										<?php endif; ?>
 									</div>
 								</div>
 						
@@ -152,18 +157,21 @@ get_header(); ?>
 						?>
 						
 						<div class="sponsor-block">
-							<a href="<?php echo $sponsor_link; ?>">
+							<a href="<?php echo $sponsor_link; ?>" target="_blank">
 								<img src="<?php echo $sponsor_image; ?>" alt="sponsor logo">
 							</a>
 						</div>
 						
 						<?php endwhile; ?>
 						<?php endif; ?>
-						<!-- END ACF REPEATER -->			
+						<!-- END ACF REPEATER -->
+									
 						
 						
 						
 					</div>
+					
+						<p class="pew-credit"><?php echo $pew_credit; ?></p>
 				</div>
 			</div>
 		</div>

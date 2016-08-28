@@ -4,6 +4,12 @@
 	//top: 20%;
 	left: 0px;
 	right: 40px;
+	.container {
+		.row {
+			margin-left: -30px;
+			margin-right: -30px;
+		}
+	}
 }
 
 .modal-backdrop {
@@ -29,6 +35,17 @@
 		border-bottom: 1px dotted $white;
 		font-family: $scalasans-regular;
 	}
+	
+}
+
+.collection_object-modal-content {
+	height: auto;
+}
+
+
+
+.modal-flex-wrapper {
+	display: flex;
 }
 
 .modal-body {
@@ -71,15 +88,75 @@
 
 .modal-dialog {
 	position: absolute;
-	right: -5px;
+	right: -3px;  //-5px
 	width: initial;
     margin: 0px 0px 60px 4px;
-    width: 100%;
+    width: calc(100% + 4px);
 }
 
 .modal-img-container {
 	img {
 		margin-top: 0px;
-		margin-left: 20px;
+		margin-left: 18px;
 	}
+}
+
+.collection_object-modal-img {
+	width: 100%;
+	height: auto;
+}
+
+.collection_object-modal-img-container {
+	height: 450px;
+	overflow: hidden;
+	flex: 1;
+}
+
+.collection_object-modal-dialog-wrapper {
+	height: 450px;
+	overflow-y: scroll;
+	flex: 1;
+}
+
+.collection_object-modal-dialog {
+	right: 0px;
+}
+
+.collection_object-overlay {
+	height: 100%;
+	width: calc(100% - 36px);
+	position: absolute;
+	//visibility: initial;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	bottom: 0px;
+	background-color: rgba(0,0,0,.75);
+	z-index: 998;
+	transition: $transition;
+	p {
+		color: $white;
+		padding: 0px 30px;
+		
+	}
+	a {
+		@include big-button($white, $black);
+		text-transform: uppercase;
+		background-color: transparent;
+		margin-top: 20px;
+		padding: 6px 12px;
+		
+	}
+	
+}
+
+/*
+.btn-show {
+	visibility: initial;
+}
+*/
+
+.collection_object-block {
+	position: relative;
 }

@@ -13,18 +13,30 @@
 
 
 
-
+<?php if( get_field('moderator') ) {
+	echo ' <span class="moderator-wrapper">';
+} else {
+	
+}
+?>
 <div class="col-sm-4 speaker-block" id="speaker-<?php echo $post->ID; ?>">
 	<button data-toggle="modal" data-target="#<?php echo $post->ID; ?>">
 		<img class="speaker-img" src="<?php echo $speaker_image; ?>">
 			
 			<div class="speaker-block-text">
-				<h4><?php echo $name; ?></h5>
+				<h4><?php echo $name; ?></h4>
 <!-- 					<p><?php echo $primary_affiliation_title; ?></p> -->
 <!-- 					<p><?php echo $primary_affiliation_org; ?></p> -->
 			</div>
 	</button>
 </div>
+
+<?php if( get_field('moderator') ) {
+	echo ' </span>';
+} else {
+	
+}
+?>
 					
 					
 <!-- Modal -->
@@ -67,22 +79,35 @@
 							<div class="modal-body">
 								<p><?php echo $short_bio; ?></p>
 								     
-								   <?php if ( have_rows('external_resources') ): ?>
-										 <?php while ( have_rows('external_resources') ): the_row(); ?>
-									    
-     
-								     
-								<h4>External Resources</h4>
+								   
+																			    
+									<?php if ( have_rows('external_resources') ): ?>
+								   		<h4>External Resources</h4>
+								   	<?php endif;?>
+								   	
 								    
+								    <?php if ( have_rows('external_resources') ): ?>
+									<?php while ( have_rows('external_resources') ): the_row(); ?>
 								    <ul>
-									   									    
-									    
-									    <li><a href="<?php echo get_sub_field('external_resource_link'); ?>"class="dashed-line-white"><?php echo get_sub_field('external_resource_label'); ?></a></li>
-									    
-									    <?php endwhile; ?>
+									    									    
+									    <li>
+									    <?php if (get_sub_field('external_resource_link')) : ?>
+									    	<a href="<?php echo get_sub_field('external_resource_link'); ?>"class="dashed-line-white" target="_blank">
 										<?php endif; ?>
+										
+										<?php echo get_sub_field('external_resource_label'); ?>
+										
+										 <?php if (get_sub_field('external_resource_link')) : ?>
+											</a>
+										<?php endif; ?>
+										</li>
 									    
+									    									    
 								    </ul>
+								    
+								     <?php endwhile; ?>
+										<?php endif; ?>
+
 								    
 								    <h4>Classes</h4>
 								    
@@ -116,3 +141,4 @@
 		</div>
 	</div>
 </div>
+

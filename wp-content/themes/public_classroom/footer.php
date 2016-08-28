@@ -18,10 +18,31 @@
 				</div>
 				<div class="row">
 					<ul class="footer-links">
-						<li><a href="#"><span class="dashed-line-silver">Public Programs</span></a></li>
-						<li><a href="#"><span class="dashed-line-silver">Copyright</span></a></li>
-						<li><a href="#"><span class="dashed-line-silver">Disclaimer</span></a></li>
-						<li><a href="#"><span class="dashed-line-silver">Privacy Policy</span></a></li>
+						 <?php if ( have_rows('footer_links', 'option') ): ?>
+						 <?php while ( have_rows('footer_links', 'option') ): the_row(); ?>
+						 
+						 	<?php if( have_rows('footer_link_content', 'option') ): ?>
+						 	<?php while ( have_rows('footer_link_content', 'option') ) : the_row(); ?>
+						 	
+						 		<?php if( get_row_layout() == 'content_url' ): ?>
+
+						 			<li><a href="<?php echo the_sub_field('footer_links_url', 'option'); ?>" target="_blank">						 		
+						 		<?php elseif( get_row_layout() == 'content_file' ): ?>
+						 		
+						 			<li><a href="<?php echo the_sub_field('footer_links_file', 'option'); ?>" target="_blank">						 		
+						 		<?php endif; ?>
+						 		
+						 								 		
+						 		<?php endwhile; ?>
+						 		<?php endif; ?>
+						 		
+						 		<span class="dashed-line-silver"><?php echo the_sub_field('footer_link_label', 'option'); ?></span></a></li>
+
+
+						 		 
+						<?php endwhile; ?>
+						<?php endif; ?>
+						
 					</ul>
 				</div>
 			</div>

@@ -64,8 +64,24 @@ body {
 
 .classes-collection-wrapper {
 	margin: 30px -15px;
-/*
-	margin-left: -15px;
-	margin-right: -15px;
-*/
+
+}
+
+
+.class-city {
+	&:after {
+		content: ', ';
+	}
+}
+
+.classes-sidebar {
+	p {
+		margin-bottom: 0px;
+	}
+	h4 {
+		&:last-of-type {
+			padding-top: 13px;
+		}
+			
+	}
 }
