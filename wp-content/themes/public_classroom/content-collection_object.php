@@ -15,7 +15,7 @@
 			 
 		<img class="collection_object-img" src="<?php echo $object_image; ?>">
 										
-		<div class="speaker-block-text">
+		<div class="object-block-text">
 			<h4><?php echo $object_title; ?></h4>
 			
 			<!-- <p><?php echo $object_label; ?></p> -->
@@ -25,7 +25,7 @@
 	
 	<div class="collection_object-overlay btn-show">	
 				<p>This object depicts potentially sensitive or graphic material.</p>
-				<a href="" class="collection_object-overlay-btn">Show Object</a>
+				<button class="collection_object-overlay-btn">Show Object</button>
 		</div>
 								
 </div>
@@ -35,9 +35,9 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-10 col-sm-offset-1 no-padding">
-				<div class="modal-flex-wrapper">
+				
 					<div class="modal-img-container collection_object-modal-img-container">
-						<div class="col-sm-12">
+						<div class="col-sm-6">
 							
 									
 							<img class="collection_object-modal-img" src="<?php echo $object_image; ?>">
@@ -46,7 +46,7 @@
 					</div>
 					
 					
-					<div class="col-sm-12 collection_object-modal-dialog-wrapper">
+					<div class="col-sm-6 collection_object-modal-dialog-wrapper">
 						<div class="modal-dialog collection_object-modal-dialog" role="document">
 							<div class="modal-content collection_object-modal-content">
 								<div class="modal-header">
@@ -79,7 +79,7 @@
 							</div>
 						</div>
 					</div>
-				</div>
+				
 		
 		</div>
 	</div>

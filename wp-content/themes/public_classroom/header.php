@@ -42,6 +42,14 @@
 		
 
 		<!-- google analytics goes here -->
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		  ga('create', 'UA-7338071-1', 'penn.museum');
+		  ga('send', 'pageview');
+		</script>
 				
 		<!--[if lt IE 9]>
 		<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js"></script>
@@ -70,6 +78,8 @@
 				    <!-- Collect the nav links, forms, and other content for toggling -->
 				    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">				      
 				      <ul class="nav navbar-nav navbar-right">
+					      	<li><a class="nav-link no-dropdown" href="<?php the_field('focus_page_link', 'option'); ?>"><?php the_field('focus_page_label', 'option'); ?></a></li>
+
 							<li class="dropdown nav-link">
 								<a href="#" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">Classes</a>
 								
@@ -78,6 +88,7 @@
 
 								if( $post_objects ): ?>
 								    <ul class="dropdown-menu animated">
+									
 								    <?php foreach( $post_objects as $post): // variable must be called $post (IMPORTANT) ?>
 								        <?php setup_postdata($post); ?>
 								        
@@ -119,8 +130,9 @@
 																
 								
 							</li>
-						  	<li><a class="nav-link no-dropdown" href="<?php the_field('about_page_link', 'option'); ?>"><?php the_field('about_page_label', 'option'); ?></a></li>
 						  	<li><a class="nav-link no-dropdown" href="<?php the_field('speakers_page_link', 'option'); ?>"><?php the_field('speakers_page_label', 'option'); ?></a></li>
+						  	<li class="divider-before"><a class="nav-link no-dropdown" href="<?php the_field('about_page_link', 'option'); ?>"><?php the_field('about_page_label', 'option'); ?></a></li>
+
 				        </ul>
 				    </div><!-- /.navbar-collapse -->
 				

@@ -48,6 +48,7 @@
 		color: $white;
 		padding: 0px 20px 20px 20px;
 	}
+/*
 	&:hover, &:active, &:focus:active {
 		.collection_object-overlay {
 			display: none;
@@ -60,6 +61,7 @@
 			opacity: 1.0;
 		}
 	}
+*/
 }
 
 .moderator {
@@ -86,7 +88,7 @@
 .collection_object-img {
 	width: auto;
 	height: 300px;
-	opacity: 0.50;
+	//opacity: 0.50;
 	&:hover, &:actve, &:focus {
 		opacity: 1.0;
 	}
@@ -115,6 +117,24 @@
 		}
 	}
 
+}
+
+.object-block-text {
+	display: flex;
+	position: absolute;
+	top: 0px;
+	width: calc(100% - 30px);
+	//left: 15px;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.25);
+	flex-direction: column;
+	justify-content: flex-end;
+	color: $white;
+	//padding: 20px;
+	h5 {
+		margin-left: 20px;
+		margin-bottom: 15px;
+	}
 }
 
 button[data-toggle="modal"] {

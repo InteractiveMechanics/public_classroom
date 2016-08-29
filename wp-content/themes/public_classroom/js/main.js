@@ -45,10 +45,33 @@ $(function() {
       }
     }
   });
+  
+  
+  if (window.location.hash) {
+	  var hash = window.location.hash;
+	  var modalId = hash.replace(/[^0-9]+/g, '');
+	  $('#' + modalId).modal('show');
+  }
+  
+  
+  
+  
+  
 });
 
 
 $('body').scrollspy();
+
+$('.collection_object-overlay-btn').on('click', function (event) {
+	$(this).parent().addClass('hidden');
+});
+
+
+
+
+
+
+
 
 
 
