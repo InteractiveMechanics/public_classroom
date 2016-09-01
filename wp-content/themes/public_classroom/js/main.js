@@ -83,11 +83,10 @@ $('li.dropdown a').on('click', function (event) {
 	} else if (!$('.dropdown-menu').hasClass('fadeInDown')) {
 		$('.dropdown-menu').addClass('fadeInDown');
 	} else {
-		$('.dropdown-menu').removeClass('fadeInDown').addClass('fadeOut');
+		//$('.dropdown-menu').removeClass('fadeInDown').addClass('fadeOut');
 	}
 	 
 });
-
 
 
 

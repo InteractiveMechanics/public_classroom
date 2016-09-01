@@ -10,6 +10,12 @@
 }
 */
 
+
+.nav-inline-li {
+	display: block; 
+	float: none;
+}
+
 .navbar {
 	margin-bottom: 0px;
 	border-radius: 0px;
@@ -69,10 +75,13 @@
 .divider-before {
 	&:before {
 		content: "|";
+		color: #ccc;
+		padding: 0px 10px;
 	}
 	@include screen-ltmd {
 		&:before {
 			content: "";
+			padding: 0px;
 		}
 	}		
 }
@@ -84,6 +93,11 @@
     position: static;
    
 }
+
+.nav .open>a, .nav .open>a:focus, .nav .open>a:hover {
+	background-color: transparent;
+}
+
 .nav > li.dropdown.open .dropdown-menu {
     display:flex; 
     width: 100%; 
@@ -96,25 +110,27 @@
     color: #ffffff;
     z-index: 9999;
     padding-top: 12px;
+    padding-bottom: 12px;
     
     @include screen-ltmd {
 	    text-align: left;
-	    display: initial;
+	    display: block;
     }
     &:after {
 		width: 0px;
 	    height: 0px;
 	    position: absolute;
 	    top: 0%;
-	    right: 235px;;
+	    right: 255px;;
 	    content: '';
 	    transform: translate(0%, -100%);
 	    border-left: 0px solid transparent;
 	    border-right: 20px solid transparent;
 	    border-bottom: 19px solid $blue;
-    }
-    
+    }    
 }
+
+
 
 
 .dropdown-menu>li {
@@ -127,6 +143,10 @@
 	    float: left;
 	    width: 100%;
     }
+}
+
+li.dropdown {
+	display: block;
 }
 
 .navbar-default .navbar-nav>li>a {
@@ -247,6 +267,7 @@ nav .open .dropdown-menu>li>a {
 
 .nav-address-container {
 	padding: 10px 20px 0px;
+// 	flex: initial;
 	
 	p {
 		margin-bottom: 0px;
@@ -274,7 +295,8 @@ nav .open .dropdown-menu>li>a {
 
 .nav-text-container {
 	padding: 10px 20px 0px;
-	flex: 1;
+	flex: 1 0 125px;
+	
 	//margin-bottom: 2.0em;
 	@include screen-ltmd {
 		float: left;

@@ -113,6 +113,7 @@
 }
 
 .modal-img-container {
+	
 	img {
 		margin-top: 0px;
 		margin-left: 18px;
@@ -124,6 +125,11 @@
 		@include screen-xxs {
 		min-width: 330px;
 		max-width: 330px;
+		}
+	}
+	.col-xs-12 {
+		@include screen-xs {
+			padding-right: 0px;
 		}
 	}
 	

@@ -43,11 +43,16 @@ get_header(); ?>
 		</div>
 	</section>
 	
+	
+	
+	 <?php if ( have_rows('about_page_videos') ): ?>
+
 	<section class="about-video-slider-container">
 		<div class="container">
 			<div class="row">
 				
 				<div class="col-sm-10 col-sm-offset-1 no-padding about-video-slider-wrapper">
+	<?php endif; ?>
 					
 					
 					
@@ -115,8 +120,8 @@ get_header(); ?>
 						<p><?php echo $resource_optional_description; ?></p>
 						</div>
 						<div class="col-sm-3 resources-download-btn-container">
-							<a href="<?php echo $resource_file; ?>" class="resources-download-btn visible-lg" target="_blank">Download</a>
-							<a href="<?php echo $resource_file; ?>" class="resources-download-btn hidden-lg" target="_blank"><img src="<?php printthemepath(); ?>/img/icon-download.svg"></a>
+							<a href="<?php echo $resource_file; ?>" class="resources-download-btn visible-lg" target="_blank"><div>Download</div></a>
+							<a href="<?php echo $resource_file; ?>" class="resources-download-btn hidden-lg" target="_blank"><div><img src="<?php printthemepath(); ?>/img/icon-download.svg"></div></a>
 							
 						</div>
 					</div>

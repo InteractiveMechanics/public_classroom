@@ -3,7 +3,7 @@ main {
 }
 
 a {
-	&:hover {
+	&:hover, &:focus {
 		text-decoration: none;
 		
 	}

@@ -1,7 +1,7 @@
 main {
   overflow-x: hidden; }
 
-a:hover {
+a:hover, a:focus {
   text-decoration: none; }
 
 .bold {
@@ -249,6 +249,10 @@ a {
 	margin: 30px;
 }
 */
+.nav-inline-li {
+  display: block;
+  float: none; }
+
 .navbar {
   margin-bottom: 0px;
   border-radius: 0px;
@@ -291,13 +295,19 @@ a {
   margin-top: 25px; }
 
 .divider-before:before {
-  content: "|"; }
+  content: "|";
+  color: #ccc;
+  padding: 0px 10px; }
 @media (max-width: 991px) {
   .divider-before:before {
-    content: ""; } }
+    content: "";
+    padding: 0px; } }
 
 .nav > li.dropdown.open {
   position: static; }
+
+.nav .open > a, .nav .open > a:focus, .nav .open > a:hover {
+  background-color: transparent; }
 
 .nav > li.dropdown.open .dropdown-menu {
   display: flex;
@@ -310,17 +320,18 @@ a {
   background-color: #134984;
   color: #ffffff;
   z-index: 9999;
-  padding-top: 12px; }
+  padding-top: 12px;
+  padding-bottom: 12px; }
   @media (max-width: 991px) {
     .nav > li.dropdown.open .dropdown-menu {
       text-align: left;
-      display: initial; } }
+      display: block; } }
   .nav > li.dropdown.open .dropdown-menu:after {
     width: 0px;
     height: 0px;
     position: absolute;
     top: 0%;
-    right: 235px;
+    right: 255px;
     content: '';
     transform: translate(0%, -100%);
     border-left: 0px solid transparent;
@@ -336,6 +347,9 @@ a {
       display: initial;
       float: left;
       width: 100%; } }
+
+li.dropdown {
+  display: block; }
 
 @media (max-width: 991px) {
   .navbar-default .navbar-nav > li > a {
@@ -448,7 +462,7 @@ nav .open .dropdown-menu>li>a {
 
 .nav-text-container {
   padding: 10px 20px 0px;
-  flex: 1; }
+  flex: 1 0 125px; }
   @media (max-width: 991px) {
     .nav-text-container {
       float: left;
@@ -785,6 +799,9 @@ footer {
   .modal-img-container .speaker-img {
     min-width: 330px;
     max-width: 330px; } }
+@media (max-width: 767px) {
+  .modal-img-container .col-xs-12 {
+    padding-right: 0px; } }
 
 .collection_object-modal-btn {
   width: 100%;
@@ -902,8 +919,9 @@ footer {
         font-size: 50px;
         padding-left: 20px; } }
 
-.forcing-auto-width {
-  width: auto; }
+@media (max-width: 767px) {
+  .forcing-auto-width {
+    width: auto; } }
 
 .front-video-container {
   background-color: #ffffff;
@@ -1211,6 +1229,9 @@ footer {
   .sponsor-block img {
     width: 100%;
     height: auto; }
+  @media (max-width: 767px) {
+    .sponsor-block {
+      width: 50%; } }
 
 .pew-credit {
   color: #b0b7bc;
@@ -1507,13 +1528,23 @@ button[data-toggle="modal"] {
     .resources-section .no-padding {
       padding-left: 20px;
       padding-right: 20px; } }
+  .resources-section:before {
+    content: normal; }
+  .resources-section:after {
+    content: normal; }
 
 .resources-block {
   background-color: #d1d3d4; }
+  @media (max-width: 480px) {
+    .resources-block .col-sm-9 {
+      flex: 1; } }
 
 .resources-block-quiz {
   background-color: #134984;
   color: #ffffff; }
+  @media (max-width: 480px) {
+    .resources-block-quiz .col-sm-9 {
+      flex: 1; } }
 
 .resources-block, .resources-block-quiz {
   padding: 20px;
@@ -1571,17 +1602,12 @@ button[data-toggle="modal"] {
   .resources-quiz-download-btn:visited {
     background-color: #ffffff;
     border-color: #ffffff; }
-  @media (max-width: 480px) {
-    .resources-quiz-download-btn {
-      width: 75px; } }
-  @media (max-width: 480px) {
-    .resources-quiz-download-btn img {
-      position: relative;
-      right: 3px; } }
 
+/*
 .resources-quiz-download-btn.hidden-lg {
-  padding: 15px; }
-
+	padding: 15px;
+}
+*/
 .resources-description {
   padding-bottom: 20px; }
 
@@ -1593,7 +1619,8 @@ button[data-toggle="modal"] {
 .resources-download-btn-container {
   display: flex;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  padding: 0px; }
 
 .resources-download-btn {
   color: #134984;
@@ -1639,13 +1666,9 @@ button[data-toggle="modal"] {
 
 .resources-download-btn.hidden-lg {
   padding: 15px; }
-  @media (max-width: 480px) {
-    .resources-download-btn.hidden-lg {
-      width: 75px; } }
-  @media (max-width: 480px) {
-    .resources-download-btn.hidden-lg img {
-      position: relative;
-      right: 3px; } }
+
+.resources-quiz-download-btn.hidden-lg {
+  padding: 15px; }
 
 .useful {
   text-decoration: underline;
@@ -1667,7 +1690,7 @@ body {
 
 .classes-subnav {
   background-color: rgba(15, 15, 15, 0.85);
-  padding: 5px 0px 5px 80px;
+  padding: 0px 0px 0px 80px;
   position: absolute;
   width: calc(100% - 50px);
   z-index: 9990; }

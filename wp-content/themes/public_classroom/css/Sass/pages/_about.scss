@@ -145,15 +145,31 @@ iframe {
 			padding-right: 20px;
 		}
 	}
+	&:before {
+		content: normal;
+	}
+	&:after {
+		content: normal;
+	}
 }
 
 .resources-block {
-	background-color: $gray;	
+	background-color: $gray;
+	.col-sm-9 {
+		@include screen-xxs {
+			flex: 1;
+		}
+	}	
 }
 
 .resources-block-quiz {
 	background-color: $blue;
 	color: $white;
+	.col-sm-9 {
+		@include screen-xxs {
+			flex: 1;
+		}
+	}	
 }
 
 
@@ -183,20 +199,14 @@ iframe {
 	font-family: $gotham-bold;
 	padding: 10px 25px;
 	text-transform: uppercase;
-	@include screen-xxs {
-		width: 75px;
-	}
-	img {
-		@include screen-xxs {
-			position: relative;
-			right: 3px;
-		}
-	}
+	
 }
 
+/*
 .resources-quiz-download-btn.hidden-lg {
 	padding: 15px;
 }
+*/
 
 .resources-description {
 	padding-bottom: 20px;
@@ -212,6 +222,7 @@ iframe {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	padding: 0px;
 }
 
 .resources-download-btn {
@@ -223,17 +234,11 @@ iframe {
 }
 
 .resources-download-btn.hidden-lg {
+	padding: 15px;	
+}
+
+.resources-quiz-download-btn.hidden-lg {
 	padding: 15px;
-	@include screen-xxs {
-		width: 75px;
-	}
-	img {
-		@include screen-xxs {
-			position: relative;
-			right: 3px;
-		}
-	}
-	
 }
 
 
