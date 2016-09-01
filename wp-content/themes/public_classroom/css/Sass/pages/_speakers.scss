@@ -11,10 +11,20 @@
     justify-content: center;
 	h1 {
 		color: $white;
-		font-size: 70px;	
+		font-size: 70px;
+		@include screen-sm {
+			font-size: 55px;
+		}
+		@include screen-xs {
+			font-size: 50px;
+			padding-left: 30px;
+		}		
 	}
 	h4 {
 		color: $white;
+		@include screen-xs {
+			padding-left: 30px;
+		}
 	}
 }
 
@@ -36,6 +46,23 @@
 	&:hover, &:active, &:focus:active {
 		opacity: 0.75;
 	}
+	@include screen-ltlg {
+		overflow: hidden;
+	}
+	@include screen-ltmd {
+		padding: 0px;
+	}
+	@include screen-xs {
+		height: 400px;
+	}
+	@include screen-xxs {
+		height: 300px;
+	}
+	button {
+		@include screen-xs {
+			width: 100%;
+		}
+	}
 }
 
 .collection_object-block {
@@ -47,6 +74,9 @@
 		text-transform: uppercase;
 		color: $white;
 		padding: 0px 20px 20px 20px;
+	}
+	@include screen-xs {
+		overflow: hidden;
 	}
 /*
 	&:hover, &:active, &:focus:active {
@@ -83,6 +113,14 @@
 .speaker-img {
 	width: auto;
 	height: 300px;
+	@include screen-xxs {
+		min-width: 345px;
+		height: auto;
+	}
+	@include screen-xs {
+		width: 100%;
+		height: auto;
+	}	
 }
 
 .collection_object-img {
@@ -91,6 +129,14 @@
 	//opacity: 0.50;
 	&:hover, &:actve, &:focus {
 		opacity: 1.0;
+	}
+	@include screen-xs {
+		width: 100%;
+		height: auto;
+	}
+	@include screen-xxs {
+		height: 100%;
+		width: auto;
 	}
 }
 
@@ -115,6 +161,12 @@
 		&:last-of-type {
 			margin-bottom: 15px;
 		}
+	}
+	@include screen-xs {
+		width: 100%;
+	}
+	@include screen-ltmd {
+		left: 0px;
 	}
 
 }
@@ -142,4 +194,5 @@ button[data-toggle="modal"] {
 	background-color: transparent;
 	padding: 0px;
 	border: none;
+	
 }

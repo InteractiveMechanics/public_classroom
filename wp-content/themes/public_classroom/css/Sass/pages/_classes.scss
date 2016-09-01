@@ -55,17 +55,60 @@ body {
 	padding-top: 60px;
 	h3 {
 		margin-bottom: 30px;
+		@include screen-xs {
+			padding-left: 20px;
+			
+		}
 	}
 }
 
+#summary {
+	.no-padding {
+		@include screen-xs {
+			padding-left: 20px;
+			padding-right: 20px;
+		}
+	}
+}
+
+.classes-sidebar {
+	padding-left: 60px;
+	@include screen-md {
+		padding-left: 40px;
+	}
+	@include screen-sm {
+		padding-left: 30px;
+	}
+	@include screen-xs {
+		padding-left: 20px;
+		padding-top: 30px;
+	}
+}
+
+
 .classes-speakers-wrapper {
 	margin: 30px -15px;
+	@include screen-ltlg {
+		margin: 30px 15px;
+	}
 }
+
+.classes-collection-section {
+	.no-padding {
+		@include screen-xs {
+			padding-left: 20px;
+			padding-right: 20px;
+		}
+	}
+}
+
 
 .classes-collection-wrapper {
 	margin: 30px -15px;
 
 }
+
+
 
 
 .class-city {

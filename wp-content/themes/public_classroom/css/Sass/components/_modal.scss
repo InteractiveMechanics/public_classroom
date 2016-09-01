@@ -10,6 +10,13 @@
 			margin-right: -30px;
 		}
 	}
+	@include screen-xs {
+		padding-left: 15px;
+		padding-right: 15px;
+		right: 0px;
+		margin-left: 15px;
+		margin-right: 15px;
+	}
 }
 
 .modal-backdrop {
@@ -34,6 +41,9 @@
 		color: $white;
 		border-bottom: 1px dotted $white;
 		font-family: $scalasans-regular;
+	}
+	@include screen-xs {
+		height: auto;
 	}
 	
 }
@@ -91,13 +101,32 @@
 	width: initial;
     margin: 0px 0px 60px 4px;
     width: calc(100% + 4px);
+    @include screen-xxs {
+	    width: 100%;
+	    right: 0px !important;
+	    padding-left: 15px;
+    }
+    @include screen-xs {
+	    right: 0px !important;
+	    padding-left: 15px;
+    }
 }
 
 .modal-img-container {
 	img {
 		margin-top: 0px;
 		margin-left: 18px;
+		@include screen-xs {
+			margin-left: 0px;
+		}	
 	}
+	.speaker-img {
+		@include screen-xxs {
+		min-width: 330px;
+		max-width: 330px;
+		}
+	}
+	
 }
 
 .collection_object-modal-btn {
@@ -114,16 +143,31 @@
 	height: auto;
 	//overflow: hidden;
 	flex: 1;
+	.col-sm-6 {
+		@include screen-xs {
+			padding-left: 0px;
+			padding-right: 0px;
+		}
+	}
 }
 
 .collection_object-modal-dialog-wrapper {
 	//height: 70vh;
 	//overflow-y: scroll;
 	flex: 1;
+	@include screen-xs {
+		padding-left: 0px;
+		padding-right: 0px;
+	}
 }
 
 .collection_object-modal-dialog {
 	right: 0px;
+	@include screen-xs {
+		right: 0px !important;
+		margin: 0px 0px 60px 0px;
+		width: 100%;
+	}
 	
 }
 

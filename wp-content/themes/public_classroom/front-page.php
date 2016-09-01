@@ -35,17 +35,17 @@ get_header(); ?>
 		</div>	
 	 </div>
 	
-	<section>
-		<div class="container">
+	<section class="front-video-section">
+		<div class="container forcing-auto-width">
 			<div class="row">
-				<div class="col-sm-10 col-sm-offset-1 front-video-container">
-					<div class="col-sm-7 no-left-padding">
+				<div class="col-lg-10 col-md-12 col-lg-offset-1 front-video-container">
+					<div class="col-lg-7 col-md-12 no-left-padding front-video-container-left">
 						 <div class="videoWrapper videoWrapper169 js-videoWrapper">
 							<iframe class="videoIframe js-videoIframe" src="https://player.vimeo.com/video/173960064?title=0&byline=0&portrait=0" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 							<button class="videoPoster js-videoPoster"><span class="sr-only">Watch Course Preview</span></button>
 						</div>					
 					</div>
-					<div class="col-sm-5 front-video-container-right">
+					<div class="col-lg-5 col-md-12 front-video-container-right">
 						<h3><?php echo $lead_heading; ?></h3>
 						<p><?php echo $lead_body_copy; ?></p>
 					</div>
@@ -57,7 +57,7 @@ get_header(); ?>
 	<section>
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-10 col-sm-offset-1 no-padding">
+				<div class="col-lg-10 col-md-12 col-lg-offset-1 no-padding">
 					<div class="front-class-block-container">
 					
 					

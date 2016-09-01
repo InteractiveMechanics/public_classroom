@@ -19,7 +19,7 @@
 	
 }
 ?>
-<div class="col-sm-4 speaker-block" id="speaker-<?php echo $post->ID; ?>">
+<div class="col-md-4 col-sm-6 speaker-block" id="speaker-<?php echo $post->ID; ?>">
 	<button data-toggle="modal" data-target="#<?php echo $post->ID; ?>">
 		<img class="speaker-img" src="<?php echo $speaker_image; ?>">
 			
@@ -43,9 +43,9 @@
 <div class="modal fade" id="<?php echo $post->ID; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 	<div class="container">
 		<div class="row">
-			<div class="col-sm-10 col-sm-offset-1 no-padding">
+			<div class="col-sm-10 col-xs-12 col-sm-offset-1 no-padding">
 				<div class="modal-img-container">
-					<div class="col-sm-4">
+					<div class="col-md-4 col-sm-6 col-xs-12">
 									
 						<img class="speaker-img" src="<?php echo $speaker_image; ?>">
 						
@@ -53,7 +53,7 @@
 				</div>
 				
 				
-				<div class="col-sm-8">
+				<div class="col-md-8 col-sm-6 col-xs-12">
 					<div class="modal-dialog" role="document">
 						<div class="modal-content">
 							<div class="modal-header">

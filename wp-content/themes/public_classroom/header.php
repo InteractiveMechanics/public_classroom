@@ -109,7 +109,7 @@
 										        <p><?php the_field('address_line_1', $post_object->ID); ?></p>
 										        <p><?php the_field('address_line_2', $post_object->ID); ?></p>
 										        <p><?php the_field('address_line_3', $post_object->ID); ?></p>
-										        <a href="<?php the_field('map_link', $post_object->ID); ?>" class="nav-map"><span class="dashed-line-white">view map</span></a>
+										        <a href="<?php the_field('map_link', $post_object->ID); ?>" class="nav-map" target="_blank"><span class="dashed-line-white">view map</span></a>
 							            	</div>
 							            	<div class="nav-text-container nav-dropdown-buttons">   
 										        <a href="<?php the_permalink($post_object->ID); ?>" class="nav-details-btn">View Details</a>

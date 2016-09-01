@@ -2,9 +2,24 @@
 	background-color: $white;
 }
 
+.about-content-section {
+	.no-padding {
+		@include screen-xs {
+			padding-left: 20px;
+			padding-right: 20px;
+		}
+	}
+}
+
 .about-video-slider-container {
 	background-color: $gray;
 	padding-top: 60px;
+	.no-padding {
+		@include screen-xs {
+			padding-left: 20px;
+			padding-right: 20px;
+		}
+	}
 }
 
 /*
@@ -21,6 +36,9 @@
 .about-video-slider {
 	display: flex !important;
 	margin-bottom: -6px;
+	@include screen-xs {
+		display: initial !important;
+	}
 }
 
 .slick-slider {
@@ -40,6 +58,19 @@
 	li {
 		margin: 0px;
 	}
+	@include screen-md {
+		right: 280px;
+	}
+	@include screen-sm {
+		right: 200px;
+	}
+	@include screen-xs {
+		right: initial;
+		position: relative;
+		bottom: 50px;
+		text-align: left;
+		padding-left: 20px;
+	}
 }
 	
 .slick-dots li button:before {
@@ -53,12 +84,25 @@
 	opacity: 1.0;
 }
 
+iframe {
+	@include screen-xs {
+		width: 100%;
+	}
+}
 
 .about-video-container-right {
 	padding: 15px 22px;
 	background-color: $white;
 	margin-left: -2px;
 	height: 320px;
+	h3 {
+		@include screen-xs {
+			padding-left: 20px;
+		}
+	}
+	@include screen-xs {
+		margin-top: -6px;
+	}
 }
 
 .video-description-container {
@@ -66,6 +110,10 @@
 	height: 62%;
 	overflow: hidden;
 	padding-right: 25px;
+	@include screen-xs {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
 }
 
 .no-video {
@@ -74,17 +122,29 @@
 	display: flex !important;
 	align-items: center;
 	background-color: $white;
+	@include screen-xs {
+		height: 100%;
+	}
 }
 
 .no-video-wrapper {
 	position: relative;
 	width: 65%;
 	margin: 0 auto;
+	@include screen-xs {
+		padding: 20px;	
+	}
 }
 
 
 .resources-section {
 	padding-top: 60px;
+	.no-padding {
+		@include screen-xs {
+			padding-left: 20px;
+			padding-right: 20px;
+		}
+	}
 }
 
 .resources-block {
@@ -110,6 +170,10 @@
 			font-style: italic;
 		}
 	}
+	@include screen-xs {
+		justify-content: space-between;
+	}
+	
 
 }
 
@@ -119,7 +183,19 @@
 	font-family: $gotham-bold;
 	padding: 10px 25px;
 	text-transform: uppercase;
+	@include screen-xxs {
+		width: 75px;
+	}
+	img {
+		@include screen-xxs {
+			position: relative;
+			right: 3px;
+		}
+	}
+}
 
+.resources-quiz-download-btn.hidden-lg {
+	padding: 15px;
 }
 
 .resources-description {
@@ -143,7 +219,25 @@
 	font-family: $gotham-bold;
 	padding: 10px 25px;
 	text-transform: uppercase;
+	
 }
+
+.resources-download-btn.hidden-lg {
+	padding: 15px;
+	@include screen-xxs {
+		width: 75px;
+	}
+	img {
+		@include screen-xxs {
+			position: relative;
+			right: 3px;
+		}
+	}
+	
+}
+
+
+
 
 .useful {
 	text-decoration: underline;

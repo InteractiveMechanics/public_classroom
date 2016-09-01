@@ -27,7 +27,7 @@ get_header(); ?>
     
   
   	 <main class="classes-page">
-	  	<div id="spyOnThis" data-spy="scroll" data-target=".classes-subnav">
+	  	<div id="spyOnThis" data-spy="scroll" data-target=".classes-subnav" class="visible-lg">
 	  	<ul class="classes-subnav nav" data-spy="affix" data-offset-top="100">
 				<li><a href="#summary">Summary</a></li>
 				<li><a href="#videos">Videos</a></li>
@@ -64,7 +64,7 @@ get_header(); ?>
 					<?php echo $class_description; ?>
 					
 				</div>
-				<div class="col-sm-3 col-sm-offset-1 classes-sidebar">
+				<div class="col-sm-4 classes-sidebar">
 					<h4>When</h4>
 					<p><?php echo $date; ?>  
 					
@@ -266,7 +266,9 @@ get_header(); ?>
 						<p><?php echo $optional_description; ?></p>
 						</div>
 						<div class="col-sm-3 resources-download-btn-container">
-							<a href="" class="resources-quiz-download-btn">Download</a>
+							<a href="<?php echo $resource_file; ?>" class="resources-quiz-download-btn visible-lg" target="_blank">Download</a>
+							<a href="<?php echo $resource_file; ?>" class="resources-quiz-download-btn hidden-lg" target="_blank"><img src="<?php printthemepath(); ?>/img/icon-download-white.svg"></a>
+
 						</div>
 					</div>
 					<?php } ?>
@@ -288,8 +290,12 @@ get_header(); ?>
 						<p><?php echo $resource_optional_description; ?></p>
 						</div>
 						<div class="col-sm-3 resources-download-btn-container">
-							<a href="<?php echo $resource_file; ?>" class="resources-download-btn" target="_blank">Download</a>
+							<a href="<?php echo $resource_file; ?>" class="resources-download-btn visible-lg" target="_blank">Download</a>
+							<a href="<?php echo $resource_file; ?>" class="resources-download-btn hidden-lg" target="_blank"><img src="<?php printthemepath(); ?>/img/icon-download.svg"></a>
+
 						</div>
+						
+						
 					</div>
 					
 					<?php endwhile; ?>

@@ -33,7 +33,7 @@ get_header(); ?>
 	 <section class="speaker-section">
 		 <div class="container">
 			<div class="row">
-				<div class="col-sm-10 col-sm-offset-1 no-padding">
+				<div class="col-lg-10 col-sm-12 col-lg-offset-1 no-padding">
 					<div class="classes-speakers-wrapper">
 					
 				<?php

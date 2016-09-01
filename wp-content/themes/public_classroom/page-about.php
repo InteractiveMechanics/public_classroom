@@ -33,7 +33,7 @@ get_header(); ?>
 		</div>	
 	 </div>
 	 
-	<section>
+	<section class="about-content-section">
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-7 col-sm-offset-1 no-padding">
@@ -115,7 +115,9 @@ get_header(); ?>
 						<p><?php echo $resource_optional_description; ?></p>
 						</div>
 						<div class="col-sm-3 resources-download-btn-container">
-							<a href="<?php echo $resource_file; ?>" class="resources-download-btn" target="_blank">Download</a>
+							<a href="<?php echo $resource_file; ?>" class="resources-download-btn visible-lg" target="_blank">Download</a>
+							<a href="<?php echo $resource_file; ?>" class="resources-download-btn hidden-lg" target="_blank"><img src="<?php printthemepath(); ?>/img/icon-download.svg"></a>
+							
 						</div>
 					</div>
 					

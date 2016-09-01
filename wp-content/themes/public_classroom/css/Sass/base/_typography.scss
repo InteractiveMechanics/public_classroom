@@ -128,6 +128,10 @@ body {
 	background-color: $offwhite;
 	padding-left: 25px;
 	padding-right: 25px;
+	@include screen-ltmd {
+		padding-left: 0px;
+		padding-right: 0px;
+	}
 }
 
 main {
@@ -191,6 +195,12 @@ blockquote p {
 	font-family: $scalasans-italic;
 	font-size: 2.25em;
 	line-height: 1.6;
+	@include screen-md {
+		font-size: 1.65em;
+	}
+	@include screen-sm {
+		font-size: 1.25em;
+	}
 }
 
 blockquote footer {
