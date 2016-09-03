@@ -4,6 +4,18 @@ main {
 a:hover, a:focus {
   text-decoration: none; }
 
+p a, .extend-p a {
+  border-bottom-width: 1px;
+  border-bottom-style: dotted;
+  text-decoration: none;
+  transition: all 0.5s ease-in-out; }
+  p a:hover, .extend-p a:hover, p a:focus, .extend-p a:focus {
+    color: #134984; }
+
+hr {
+  margin-top: 40px;
+  margin-bottom: 40px; }
+
 .bold {
   font-family: "Gotham-Bold", Helvetica, Arial, sans-serif; }
 
@@ -183,12 +195,16 @@ h2 {
 h3 {
   font-size: 1.35em;
   color: #134984;
-  font-family: "Gotham-Bold", Helvetica, Arial, sans-serif; }
+  font-family: "Gotham-Bold", Helvetica, Arial, sans-serif;
+  padding-top: 10px;
+  padding-bottom: 5px; }
 
 h4 {
   font-size: 1.25em;
   color: #aa2d3e;
-  font-family: "Gotham-Bold", Helvetica, Arial, sans-serif; }
+  font-family: "Gotham-Bold", Helvetica, Arial, sans-serif;
+  padding-top: 10px;
+  padding-bottom: 5px; }
 
 h5 {
   font-size: 1.25em;
@@ -923,18 +939,28 @@ footer {
   .forcing-auto-width {
     width: auto; } }
 
-.front-video-container {
+.front-video-container, .front-video-container-no-media {
   background-color: #ffffff;
   height: 100%;
   margin-top: -175px;
   padding-left: 0px;
   display: flex; }
   @media (max-width: 991px) {
-    .front-video-container {
+    .front-video-container, .front-video-container-no-media {
       display: inline-block;
       padding-left: 30px;
       padding-right: 30px;
       background-color: #d1d3d4; } }
+
+.front-video-container-no-media {
+  display: block;
+  padding: 30px; }
+  @media (max-width: 991px) {
+    .front-video-container-no-media {
+      display: blcok;
+      padding-left: 30px;
+      padding-right: 30px;
+      background-color: #ffffff; } }
 
 .front-video-wrapper {
   position: relative;
@@ -949,6 +975,15 @@ footer {
   left: 0;
   width: 100%;
   height: 100%; }
+
+.front-image {
+  background-color: #134984;
+  border-radius: 0px !important;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  margin-bottom: 0; }
 
 @media (max-width: 991px) {
   .front-video-container-left {

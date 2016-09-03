@@ -38,18 +38,49 @@ get_header(); ?>
 	<section class="front-video-section">
 		<div class="container forcing-auto-width">
 			<div class="row">
-				<div class="col-lg-10 col-md-12 col-lg-offset-1 front-video-container">
-					<div class="col-lg-7 col-md-12 no-left-padding front-video-container-left">
-						 <div class="videoWrapper videoWrapper169 js-videoWrapper">
-							<iframe class="videoIframe js-videoIframe" src="https://player.vimeo.com/video/173960064?title=0&byline=0&portrait=0" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-							<button class="videoPoster js-videoPoster"><span class="sr-only">Watch Course Preview</span></button>
-						</div>					
-					</div>
-					<div class="col-lg-5 col-md-12 front-video-container-right">
-						<h3><?php echo $lead_heading; ?></h3>
-						<p><?php echo $lead_body_copy; ?></p>
-					</div>
+				
+				<?php if ( have_rows('lead_media') ): ?>
+					<?php while ( have_rows('lead_media') ): the_row(); ?>
+					
+					<div class="col-lg-10 col-md-12 col-lg-offset-1 front-video-container">
+						<div class="col-lg-7 col-md-12 no-left-padding front-video-container-left">
+							
+							<?php if( get_row_layout() == 'video' ): ?>	
+								 <div class="videoWrapper videoWrapper169 js-videoWrapper">
+<!-- 									<iframe class="videoIframe js-videoIframe" src="<?php echo the_sub_field('video'); ?>" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> -->
+									<?php echo the_sub_field('video'); ?>
+										
+									<button class="videoPoster js-videoPoster"><span class="sr-only">Watch Course Preview</span></button>
+								</div>	
+							
+							
+							<?php elseif( get_row_layout() == 'image' ): ?>
+								
+								<div class="front-image" style="background-image: url('<?php echo the_sub_field("image"); ?>');"></div>
+								
+							
+							<?php endif; ?>					
+						
+						</div>
+						
+						<div class="col-lg-5 col-md-12 front-video-container-right">
+							<h3><?php echo $lead_heading; ?></h3>
+							<p><?php echo $lead_body_copy; ?></p>
+						</div>
+					
+					</div>	
+					<?php endwhile; ?>
+				<?php endif; ?>
+
+				
+				<?php if (! have_rows('lead_media') ): ?>	
+				<div class="col-lg-10 col-md-12 col-lg-offset-1 front-video-container-no-media">
+					<h3><?php echo $lead_heading; ?></h3>
+					<p><?php echo $lead_body_copy; ?></p>
 				</div>
+				<?php endif; ?>
+				
+				
 			</div>
 		</div> 
 	</section>

@@ -3,10 +3,28 @@ main {
 }
 
 a {
+	
 	&:hover, &:focus {
 		text-decoration: none;
 		
+		
 	}
+}
+
+p a {
+	border-bottom-width: 1px;
+    border-bottom-style: dotted;
+    text-decoration: none;
+    transition: $transition;
+    &:hover, &:focus {
+	    color: $blue;
+    }
+}
+
+
+hr {
+	margin-top: 40px;
+	margin-bottom: 40px;
 }
 
 .bold {

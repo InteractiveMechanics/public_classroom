@@ -59,6 +59,8 @@ $(function() {
   
 });
 
+$('.videoWrapper').find('iframe').addClass('videoIframe').addClass('js-videoIframe');
+
 
 $('body').scrollspy();
 
