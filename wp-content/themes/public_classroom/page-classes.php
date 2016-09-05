@@ -23,6 +23,7 @@ get_header(); ?>
 	  $quiz_title = get_field('quiz_title');
 	  $quiz_file_type = get_field('quiz_file_type');
 	  $optional_description = get_field('optional_description');
+	  $no_video_text = get_field('no_video_text');
   ?>
     
   
@@ -117,8 +118,7 @@ get_header(); ?>
 						<?php endwhile; else: ?>
 							<div class="no-video">
 								<div class="no-video-wrapper">
-									<h3>No Videos Yet</h3>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+									<?php echo $no_video_text; ?>
 								</div>
 							</div>
 							
@@ -265,11 +265,14 @@ get_header(); ?>
 						<p><span class="useful">Useful For:</span> <?php echo implode(', ', get_field('quiz_useful_for')); ?></p>
 						<p><?php echo $optional_description; ?></p>
 						</div>
+						
+						
 						<div class="col-sm-3 resources-download-btn-container">
 							<a href="<?php echo $resource_file; ?>" class="resources-quiz-download-btn visible-lg" target="_blank">Download</a>
 							<a href="<?php echo $resource_file; ?>" class="resources-quiz-download-btn hidden-lg" target="_blank"><img src="<?php printthemepath(); ?>/img/icon-download-white.svg"></a>
-
 						</div>
+						
+						
 					</div>
 					<?php } ?>
 					
@@ -289,12 +292,31 @@ get_header(); ?>
 						<p><span class="useful">Useful For:</span><?php echo implode(', ', get_sub_field('resource_useful_for')); ?></p>
 						<p><?php echo $resource_optional_description; ?></p>
 						</div>
-						<div class="col-sm-3 resources-download-btn-container">
-							<a href="<?php echo $resource_file; ?>" class="resources-download-btn visible-lg" target="_blank">Download</a>
-							<a href="<?php echo $resource_file; ?>" class="resources-download-btn hidden-lg" target="_blank"><img src="<?php printthemepath(); ?>/img/icon-download.svg"></a>
-
-						</div>
 						
+						
+						<?php if( have_rows('resource_content') ): ?>
+						 	<?php while ( have_rows('resource_content') ) : the_row(); ?>
+						
+						<?php if( get_row_layout() == 'resource_file' ): 
+							
+						?>
+							<div class="col-sm-3 resources-download-btn-container">
+								<a href="<?php echo $resource_file; ?>" class="resources-download-btn visible-lg" target="_blank">Download</a>
+								<a href="<?php echo $resource_file; ?>" class="resources-download-btn hidden-lg" target="_blank"><img src="<?php printthemepath(); ?>/img/icon-download.svg"></a>
+							</div>
+							<?php elseif( get_row_layout() == 'resource_url' ): 
+							?>
+							<div class="col-sm-3 resources-download-btn-container">
+								<a href="<?php echo the_sub_field('resource_url'); ?>" class="resources-download-btn visible-lg" target="_blank">Open</a>
+								<a href="<?php echo the_sub_field('rescource_url'); ?>" class="resources-download-btn hidden-lg" target="_blank"><img src="<?php printthemepath(); ?>/img/icon-external.svg"></a>
+							</div>
+						<?php endif; ?>
+						
+						<?php endwhile; ?>
+						<?php endif; ?>
+
+						
+					
 						
 					</div>
 					

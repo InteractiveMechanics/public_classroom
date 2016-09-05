@@ -119,11 +119,29 @@ get_header(); ?>
 						<p><span class="useful">Useful For:</span><?php echo implode(', ', get_sub_field('resource_useful_for')); ?></p>
 						<p><?php echo $resource_optional_description; ?></p>
 						</div>
-						<div class="col-sm-3 resources-download-btn-container">
-							<a href="<?php echo $resource_file; ?>" class="resources-download-btn visible-lg" target="_blank"><div>Download</div></a>
-							<a href="<?php echo $resource_file; ?>" class="resources-download-btn hidden-lg" target="_blank"><div><img src="<?php printthemepath(); ?>/img/icon-download.svg"></div></a>
+						
+						
+						<?php if( have_rows('resource_content') ): ?>
+						 	<?php while ( have_rows('resource_content') ) : the_row(); ?>
+						
+						<?php if( get_row_layout() == 'resource_file' ): 
 							
-						</div>
+						?>
+							<div class="col-sm-3 resources-download-btn-container">
+								<a href="<?php echo $resource_file; ?>" class="resources-download-btn visible-lg" target="_blank">Download</a>
+								<a href="<?php echo $resource_file; ?>" class="resources-download-btn hidden-lg" target="_blank"><img src="<?php printthemepath(); ?>/img/icon-download.svg"></a>
+							</div>
+							<?php elseif( get_row_layout() == 'resource_url' ): 
+							?>
+							<div class="col-sm-3 resources-download-btn-container">
+								<a href="<?php echo the_sub_field('resource_url'); ?>" class="resources-download-btn visible-lg" target="_blank">Open</a>
+								<a href="<?php echo the_sub_field('rescource_url'); ?>" class="resources-download-btn hidden-lg" target="_blank"><img src="<?php printthemepath(); ?>/img/icon-external.svg"></a>
+							</div>
+						<?php endif; ?>
+						
+						<?php endwhile; ?>
+						<?php endif; ?>
+
 					</div>
 					
 					<?php endwhile; ?>
