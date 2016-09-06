@@ -266,7 +266,7 @@ $color-button-hover: #f00;
 	li {
 		&:last-of-type {
 			&:before {
-					content: ' and ';
+					content: ' and moderator ';
 					font-family: $scalasans-regular;
 					//border-bottom: 1px dotted transparent;
 				}
@@ -379,31 +379,54 @@ $color-button-hover: #f00;
 	 text-align: center;
  }
  
- .sponsor-container {
+ .sponsor-container, .pew-container {
 	display: flex;
+	padding: 0px;
+    margin: 0 -1.5%;
+ }
+ 
+ .sponsor-container {
     flex-wrap: wrap;
     justify-content: center;
-    padding: 0px;
-    margin: 0 -1.5%;
+    
+ }
+ 
+ .pew-container {
+	align-items: center;
+	@include screen-ltmd {
+		display: initial;
+		
+	}
  }
  
  .sponsor-block {
 	margin-bottom: 30px;
-    width: 22%;
+    width: 17%;
     margin: 20px 1.5%;
+    transition: $transition;
     img {
 	    width: 100%;
 	    height: auto;
     }
-    @include screen-xs {
+    @include screen-ltmd {
 	    width: 50%;
+    }
+    &:hover, &:focus, &:active {
+	    opacity: 0.65;
     }
 }
 
+.pew-block {
+	@extend .sponsor-block;
+	width: auto;
+	@include screen-ltmd {
+		margin: 0 auto;
+		width: 50%;
+	}
+}
+
 .pew-credit {
-	color: $silver;
-	text-align: center;
-    padding-top: 10px;
+	padding: 25px;
     @include screen-ltmd {
 	    width: 70%;
 	    margin: 0px auto;

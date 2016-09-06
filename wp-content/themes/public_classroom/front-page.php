@@ -19,7 +19,9 @@ get_header(); ?>
 	$quote_copy = get_field('quote_copy');
 	$quote_attribution = get_field('quote_attribution');
 	$sponsor_heading = get_field('sponsor_heading');
-	$pew_credit = get_field('pew_credit');	
+	$sponsor_credit = get_field('sponsor_credit');
+	$pew_logo = get_field('pew_logo');
+	$pew_link = get_field('pew_link');	
 ?>
 
 
@@ -179,6 +181,16 @@ get_header(); ?>
 				<div class="col-sm-10 col-sm-offset-1 no-padding">
 					<h3 class="sponsor-heading"><?php echo $sponsor_heading; ?></h3>
 					
+					<div class="pew-container">
+						<div class="pew-block">
+							<a href="<?php echo $pew_link; ?>" target="_blank">
+								<img src="<?php echo $pew_logo; ?>" alt="Pew Center for Arts and Heritage logo">
+							</a>
+						</div>
+						<div class="pew-credit"><?php echo $sponsor_credit; ?></div>
+					</div>
+					
+					
 					<div class="sponsor-container">
 						
 						<?php if ( have_rows('sponsor_block') ): ?>
@@ -202,7 +214,7 @@ get_header(); ?>
 						
 					</div>
 					
-						<p class="pew-credit"><?php echo $pew_credit; ?></p>
+						
 				</div>
 			</div>
 		</div>

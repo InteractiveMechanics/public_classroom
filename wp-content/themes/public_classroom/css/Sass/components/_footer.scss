@@ -38,6 +38,12 @@ footer {
 		padding: 0px 5px;
 		a {
 			color: $silver;
+			border-bottom: 1px dotted $silver;
+			transition: $transition;
+			&:hover, &:focus, &:active {
+				color: darken($silver, 15%);
+				border-color: darken($silver, 15%);
+			}
 		}
 		
 	}

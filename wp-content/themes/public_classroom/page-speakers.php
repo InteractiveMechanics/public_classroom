@@ -38,7 +38,7 @@ get_header(); ?>
 					
 				<?php
 					
-					$args = array( 'post_type' => 'speaker', 'posts_per_page' => 50, 'orderby'=>'title','order'=>'ASC');
+					$args = array( 'post_type' => 'speaker', 'orderby'=>'title', 'order'=>'ASC', 'posts_per_page' => 50);
 					$loop = new WP_Query( $args );
 
 					while ( $loop->have_posts() ) : $loop->the_post();

@@ -73,6 +73,7 @@ body {
 
 .classes-sidebar {
 	padding-left: 60px;
+	margin-top: -14px;
 	@include screen-md {
 		padding-left: 40px;
 	}
@@ -83,6 +84,12 @@ body {
 		padding-left: 20px;
 		padding-top: 30px;
 	}
+}
+
+.classes-registration-btn {
+	@extend .front-btn;
+	margin-top: 23px;
+	margin-bottom: 20px;
 }
 
 

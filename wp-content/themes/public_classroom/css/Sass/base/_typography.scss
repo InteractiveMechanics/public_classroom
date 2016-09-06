@@ -138,6 +138,10 @@ main {
 	background-color: $gray;
 }
 
+b, strong {
+	font-family: "ScalaSans-Bold", Helvetica, Arial, sans-serif;
+}
+
 h1 {
 	font-size: 4.5em;
 	font-family: $scalasans-bold;

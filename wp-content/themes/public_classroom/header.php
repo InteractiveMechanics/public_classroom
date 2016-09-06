@@ -97,7 +97,10 @@
 				    <!-- Collect the nav links, forms, and other content for toggling -->
 				    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">				      
 				      <ul class="nav navbar-nav navbar-right">
+					      	
 					      	<li><a class="nav-link no-dropdown" href="<?php the_field('focus_page_link', 'option'); ?>"><?php the_field('focus_page_label', 'option'); ?></a></li>
+					      	<li><a class="nav-link no-dropdown" href="<?php the_field('collection_page_link', 'option'); ?>"><?php the_field('collection_page_label', 'option'); ?></a></li>
+
 
 							<li class="dropdown clearfix nav-link">
 								<a href="#" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">Classes</a>
@@ -114,7 +117,7 @@
 								         <li class="nav-inline-li clearfix">
 							            	<a href="<?php the_permalink($post_object->ID); ?>" class="nav-img-link">
 								            	<div class="nav-img-container">
-									            	<img src="<?php the_field('cover_image', $post_object->ID); ?>" alt="placeholder image" class="nav-img">
+									            	<img src="<?php the_field('cover_image', $post_object->ID); ?>"  class="nav-img">
 								            	</div>
 							          		</a>
 								            	
@@ -134,7 +137,7 @@
 										        <a href="<?php the_permalink($post_object->ID); ?>" class="nav-details-btn">View Details</a>
 										        
 										        <?php if( get_field('registration_link', $post_object->ID) ): ?>
-												<a href="<?php the_field('registration_link', $post_object->ID); ?>" class="nav-register-btn">Register</a>
+												<a href="<?php the_field('registration_link', $post_object->ID); ?>" class="nav-register-btn" target="_blank">Register</a>
 												<?php endif; ?>
 							            	</div>		
 								            	

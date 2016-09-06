@@ -150,6 +150,7 @@ li.dropdown {
 }
 
 .navbar-default .navbar-nav>li>a {
+	transition: $transition;
 	@include screen-ltmd {
 		color: $white;
 	}
@@ -210,6 +211,8 @@ nav .open .dropdown-menu>li>a {
 
 .navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
 	color: $blue;
+	box-shadow: 0px 3px 0px transparent;
+    transform: translate(0px, -3px);
 	@include screen-ltmd {
 		color: $offwhite;
 	}
@@ -237,7 +240,7 @@ nav .open .dropdown-menu>li>a {
 
 
 .nav-img-container {
-	height: 85px;
+	height: 82px;
 	overflow: hidden;
 	@include screen-ltmd {
 		float: left;
@@ -263,6 +266,10 @@ nav .open .dropdown-menu>li>a {
 	white-space: pre-wrap;
 	text-transform: uppercase;
 	color: #ffffff;
+	transition: $transition;
+	&:hover, &:focus, &:active {
+		opacity: 0.65;
+	}
 }
 
 .nav-address-container {
@@ -280,15 +287,17 @@ nav .open .dropdown-menu>li>a {
 		//margin-left: 130px;
 		padding: 10px 10px 0px;
 	}
+	a {
+		transition: $transition;
+		&:hover, &:active, &:focus {
+			opacity: 0.65;
+		}
+	}
 }
 
 .nav-map {
 	display: block;
 	color: #ffffff;
-	transition: $transition;
-	&:hover, &:active, &:focus {
-		color: $offwhite;
-	}
 }
 
 

@@ -82,7 +82,7 @@
 								   
 																			    
 									<?php if ( have_rows('external_resources') ): ?>
-								   		<h4>External Resources</h4>
+								   		<h4>Select Resources</h4>
 								   	<?php endif;?>
 								   	
 								    

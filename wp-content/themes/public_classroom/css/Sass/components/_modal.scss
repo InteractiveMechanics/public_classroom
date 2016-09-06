@@ -37,6 +37,14 @@
 	h4 {
 		color: $white;		
 	}
+	a {
+		color: $white;
+		transition: $transition;
+		&:hover, &:active, &:focus {
+			color: $white;
+			opacity: 0.65;
+		}
+	}
 	li a {
 		color: $white;
 		border-bottom: 1px dotted $white;
@@ -45,6 +53,7 @@
 	@include screen-xs {
 		height: auto;
 	}
+	
 	
 }
 

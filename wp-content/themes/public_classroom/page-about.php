@@ -128,14 +128,14 @@ get_header(); ?>
 							
 						?>
 							<div class="col-sm-3 resources-download-btn-container">
-								<a href="<?php echo $resource_file; ?>" class="resources-download-btn visible-lg" target="_blank">Download</a>
-								<a href="<?php echo $resource_file; ?>" class="resources-download-btn hidden-lg" target="_blank"><img src="<?php printthemepath(); ?>/img/icon-download.svg"></a>
+								<a href="<?php echo the_sub_field('resource_file'); ?>" class="resources-download-btn visible-lg" target="_blank">Download</a>
+								<a href="<?php echo the_sub_field('resource_file'); ?>" class="resources-download-btn hidden-lg" target="_blank"><img src="<?php printthemepath(); ?>/img/icon-download.svg"></a>
 							</div>
 							<?php elseif( get_row_layout() == 'resource_url' ): 
 							?>
 							<div class="col-sm-3 resources-download-btn-container">
 								<a href="<?php echo the_sub_field('resource_url'); ?>" class="resources-download-btn visible-lg" target="_blank">Open</a>
-								<a href="<?php echo the_sub_field('rescource_url'); ?>" class="resources-download-btn hidden-lg" target="_blank"><img src="<?php printthemepath(); ?>/img/icon-external.svg"></a>
+								<a href="<?php echo the_sub_field('resource_url'); ?>" class="resources-download-btn hidden-lg" target="_blank"><img src="<?php printthemepath(); ?>/img/icon-external.svg"></a>
 							</div>
 						<?php endif; ?>
 						

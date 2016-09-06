@@ -36,7 +36,7 @@
 						 		<?php endwhile; ?>
 						 		<?php endif; ?>
 						 		
-						 		<span class="dashed-line-silver"><?php echo the_sub_field('footer_link_label', 'option'); ?></span></a></li>
+						 		<span><?php echo the_sub_field('footer_link_label', 'option'); ?></span></a></li>
 
 
 						 		 
