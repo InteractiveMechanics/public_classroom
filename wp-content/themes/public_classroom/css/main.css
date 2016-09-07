@@ -356,6 +356,8 @@ a {
     border-left: 0px solid transparent;
     border-right: 20px solid transparent;
     border-bottom: 19px solid #134984; }
+  .nav > li.dropdown.open .dropdown-menu .nav-img-link {
+    background-color: transparent !important; }
 
 .dropdown-menu > li {
   display: flex;
@@ -883,7 +885,8 @@ footer {
   bottom: 0px;
   background-color: rgba(0, 0, 0, 0.75);
   z-index: 998;
-  transition: all 0.5s ease-in-out; }
+  transition: all 0.5s ease-in-out;
+  display: none; }
   .collection_object-overlay p, .collection_object-overlay .extend-p {
     color: #ffffff;
     padding: 0px 30px; }
@@ -937,6 +940,8 @@ footer {
 */
 .collection_object-block {
   position: relative; }
+  .collection_object-block h4 {
+    line-height: 1.4; }
 
 .homepage-hero {
   height: 500px;
@@ -955,6 +960,11 @@ footer {
     @media (max-width: 767px) {
       .homepage-hero h1 {
         font-size: 50px;
+        padding-left: 20px; } }
+  .homepage-hero h4 {
+    color: white; }
+    @media (max-width: 767px) {
+      .homepage-hero h4 {
         padding-left: 20px; } }
 
 @media (max-width: 767px) {
@@ -1060,23 +1070,7 @@ footer {
   transition: opacity 800ms, height 0s;
   -webkit-transition-delay: 0s, 0s;
   -moz-transition-delay: 0s, 0s;
-  transition-delay: 0s, 0s;
-  /*
-    &:before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 80px;
-      height: 80px;
-      margin: -40px 0 0 -40px;
-      border: 5px solid $color-button;
-      border-radius: 100%;
-      -webkit-transition: border-color 300ms;
-      -moz-transition: border-color 300ms;
-      transition: border-color 300ms;
-    }
-  */ }
+  transition-delay: 0s, 0s; }
   .videoPoster:after {
     content: 'Watch Course Preview';
     text-transform: uppercase;
@@ -1124,7 +1118,8 @@ footer {
   top: 0;
   position: relative;
   box-shadow: 0 5px 0 transparent;
-  transition: all 0.5s; }
+  transition: all 0.5s;
+  flex: none; }
   .class-top img {
     width: 100%;
     height: auto; }
@@ -1155,7 +1150,8 @@ footer {
     display: inline-block; }
     .speaker-list li:last-of-type:before {
       content: ' and moderator ';
-      font-family: "ScalaSans-Regular", Helvetica, Arial, sans-serif; }
+      font-family: "ScalaSans-Regular", Helvetica, Arial, sans-serif;
+      font-size: 1.25em; }
     .speaker-list li:last-of-type:after {
       content: '. ';
       border-bottom: none; }
@@ -1174,6 +1170,7 @@ footer {
 .class-description-container {
   background-color: #ffffff;
   padding: 20px;
+  -ms-flex: none !important;
   flex: 1; }
   .class-description-container p, .class-description-container .extend-p {
     display: inline; }
@@ -1771,7 +1768,7 @@ body {
   z-index: 9990; }
   .classes-subnav li {
     display: inline-block;
-    padding: 0px 20px; }
+    padding: 0px 10px; }
     .classes-subnav li a {
       color: #ffffff;
       opacity: 0.5;

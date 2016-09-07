@@ -17,6 +17,12 @@
 			padding-left: 20px;
 		}	
 	}
+    h4 {
+        color: white;
+        @include screen-xs {
+			padding-left: 20px;
+		}
+    }
 }
 
 .forcing-auto-width {
@@ -146,22 +152,6 @@ $color-button-hover: #f00;
   -webkit-transition-delay: 0s, 0s;
   -moz-transition-delay: 0s, 0s;
   transition-delay: 0s, 0s;
-/*
-  &:before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 80px;
-    height: 80px;
-    margin: -40px 0 0 -40px;
-    border: 5px solid $color-button;
-    border-radius: 100%;
-    -webkit-transition: border-color 300ms;
-    -moz-transition: border-color 300ms;
-    transition: border-color 300ms;
-  }
-*/
   &:after {
     content: 'Watch Course Preview';
 	text-transform: uppercase;
@@ -226,6 +216,7 @@ $color-button-hover: #f00;
     position: relative;
     box-shadow: 0 5px 0 transparent;
     transition: all 0.5s;
+    flex: none; // for IE
     img {
 	    width: 100%;
 		height: auto;
@@ -268,6 +259,7 @@ $color-button-hover: #f00;
 			&:before {
 					content: ' and moderator ';
 					font-family: $scalasans-regular;
+                    font-size: 1.25em;
 					//border-bottom: 1px dotted transparent;
 				}
 				&:after {
@@ -300,6 +292,7 @@ $color-button-hover: #f00;
 .class-description-container {
 	background-color: $white;
 	padding: 20px;
+	-ms-flex: none !important; 
 	flex: 1;
 	p {
 		display: inline;

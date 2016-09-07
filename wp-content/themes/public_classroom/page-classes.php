@@ -12,6 +12,7 @@ get_header(); ?>
   <?php /* The loop */ ?>
   <?php while ( have_posts() ) : the_post();
 	  $cover_image = get_field('cover_image');
+      $class_number = get_field('class_number');
 	  $date = get_field('date');
 	  $class_time = get_field('class_time');
 	  $title = get_field('title');
@@ -33,8 +34,8 @@ get_header(); ?>
 	  	<ul class="classes-subnav nav" data-spy="affix" data-offset-top="100">
 				<li><a href="#summary">Summary</a></li>
 				<li><a href="#videos">Videos</a></li>
-				<li><a href="#speakers">Speakers &amp; Moderator</a></li>
-				<li><a href="#collection">Collection Workshop</a></li>
+				<li><a href="#speakers">Moderator &amp; Speakers</a></li>
+				<li><a href="#collection">Morton Collection Workshop</a></li>
 				<li><a href="#resources">Resources &amp; Workbook</a></li>
 			</ul>
 	  	</div>
@@ -44,7 +45,7 @@ get_header(); ?>
 			<div class="row">
 				
 				<div class="col-sm-10 col-sm-offset-1 no-padding">
-					<h4><?php echo $date; ?></h4>
+					<h4>Class <?php echo $class_number; ?> &ndash; <?php echo $date; ?></h4>
 					<h1 class="homepage-headline"><?php echo $title; ?></h1>
 				</div>
 			</div>
@@ -141,7 +142,7 @@ get_header(); ?>
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-10 col-sm-offset-1 no-padding">
-					<h3>Speakers &amp; Moderator</h3>
+					<h3>Moderator &amp; Speakers</h3>
 						<div class="classes-speakers-wrapper">
 					
 						
@@ -203,7 +204,7 @@ get_header(); ?>
 				<div class="col-sm-10 col-sm-offset-1 no-padding">
 					
 
-					<h3>Collection Workshop</h3>
+					<h3>Morton Collection Workshop</h3>
 				</div>
 				
 				<div class="col-sm-7 col-sm-offset-1 no-padding">

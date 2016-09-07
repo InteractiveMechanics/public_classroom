@@ -199,6 +199,8 @@
 	background-color: rgba(0,0,0,.75);
 	z-index: 998;
 	transition: $transition;
+    display: none;
+
 	p {
 		color: $white;
 		padding: 0px 30px;
@@ -223,4 +225,8 @@
 
 .collection_object-block {
 	position: relative;
+
+    h4 {
+        line-height: 1.4;
+    }
 }
